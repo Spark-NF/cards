@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="9" height="8" tilewidth="16" tileheight="16" nextobjectid="1">
+ <properties>
+  <property name="unity:scale" value="0.01"/>
+ </properties>
  <tileset firstgid="1" source="../Tilesets/Indoors/Common.tsx"/>
  <tileset firstgid="172" source="../Tilesets/Indoors/Shop.tsx"/>
  <tileset firstgid="268" source="../Tilesets/Collision.tsx"/>
