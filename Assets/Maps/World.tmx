@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" nextobjectid="1">
+ <tileset firstgid="1" source="../Tilesets/Terrains/Common.tsx"/>
+ <tileset firstgid="958" source="../Tilesets/Terrains/Water.tsx"/>
+ <tileset firstgid="1684" source="../Tilesets/Terrains/Nature.tsx"/>
+ <tileset firstgid="2006" source="../Tilesets/Collision.tsx"/>
+ <tileset firstgid="2007" source="../Tilesets/Terrains/Bridges.tsx"/>
+ <tileset firstgid="2313" source="../Tilesets/Houses/1.tsx"/>
+ <layer name="00. Grass" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztwwEJAAAMA6DBq65/hvU4CvaSqqqqqq8P/U2cEA==
+  </data>
+ </layer>
+ <layer name="01. Grass - flowers" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJxNlwtS4lwQhRH1RlBnCeqv444dnxsIBIKwAV4Byg34YrDcgOLbQnz8fSbfrcSqroRwb/fpc07fYBIUCk+uUPhr0bH7PbtGFs8WcZDGokXd4tSefVnU7H5m1yLPNywGWm+xGaTXoV2XLE7svm/XBa2xWOWZ6oQWPYs3i6rFcpDur9j92KU5vy2OLT4tGrkc++C7suuEXMLWDdLP/+pa1C2OLC4sEmI9SJ+r3zF1T9ijvE2X1iizTnV2LD54XglSvgp23bI4sPt71l26lE/hFIe3wk0P5/CinCt2nQq3XavUFxbxKf7/g9tfFm2Lobiibtfi3eLFpRgTcj1YlMivOspxQX8xuN7QVjXvwTFyqcZDtPqxaxuNxmDpw8cfODogl7idotMXedTvGl6qwfECOLvgm+CfAbWq9HPDd1/kFJahy/w3Bf8yvAnDB8/b7D10qV7CrXUFMDTBI786vJTAqbjYDVLc2jN36boDvBcFKf/KcU39AA4v0LgFN2W+k5cT+BO+gFq+jvbM2StNt9FbHqvRTwOvV+i7j4+E4Td8qs4xHHTxpbTWjI7QUZ7Xvktwhmg9RINTNPvBqzH1ztGuzzyLi4HL5nuV3nQvL7fw5ohnYzi/BN8CmGNwDpmnAToN4LQPH97jmoEiPaivCvMx4vsQHOL7hH5D9HjCx/L6I+s/+E7rOsyxdJHvrvDDHrxorqvgFTd1+Necap986qj3G06kq2alxJ45OdvoHuODa3wpb9zB7QSNbsEwwItnfB5RR1rILzH9L+LdT3iQt9u5fg+ouY2/htQqwG/IfGvvG96TJzSTr/Qa0+s7ntQ+8dphTZnzSz5czPHWdNm5tonPi3hhxt4ieMXXN/uX0KTO/TV1VV8838KBPms+IzycwKd6KjHnTfpVDz/ovI9PezkeZ6wR7xHefcS/8vIO2KXjMhzpO3HQwc/e+2/g8mdphK91ZgzQQjV7YJNXdY4f4fGI/T14fKH/R2ZTz7/wlrivwF+FtZv4Zkq/XXqtMWu6T+h1n3yaPXlZ/H3SQ8w5tMu8CIufnTtm7hGfhvjhCB97n6ivGrmPXfbef6CWvltn/ie5/p/x5C7a9vDkDXydUkPrT3hWZg7875E5M1NhXnt4QjjX8GnCfB267NzYCbI6LbyyQS9P+LCJ387gIACHfPcEnxvMyTdcqsaQvWfkucbzU/x377Kz4S98Ck+f+e1RL4GLmLPmHV6H+FQ4NI/ywwEc69k5e5TPcX74s7RBTyU0nsLxH2pJ/1PwjLlqTrouO3e0d4KWbXQVb6v4dBkPXoFXer3STznINK+zN4G/XXTUOeh/38zR2p8pFfo/xtsh+cVZ22XvBvHbCbJ3mfT/xZmjnBFatMm5BRc9OPs3K3D0Ag9L6BPCZ5XnA3R4gyf5aQSn4tC/a7c5q6Lc2aJzTjNb9WcC+JTjmO/kuS44dN6voLF6uWP9K/4ow2sDnRrMyS04GuRK0K/nMcC5fz/cknMCXs3qJesd+NXLM3jmzM0L6/wsfoNpgbNln7nRHv8buOz1xS8x+CrgcJxFyi8N/FlVQ5MO89VFN62PqKfv39mn/qRBC8/swrty18lxDTbh0p/eax9w1IHT59zMfHGd5Ty3AsaQ+gmfX6lbAVMfreRjXzfE91tB9o59gbMS61v4LAZ7Hy9rbov4+RVvPqJpi/X+f6Axmut5lTMiYi7yvC0yM4foqZm+QfeQnOvoPGdNF9/8QpM9MLzTY4O88smAnoShl9O+j49mcBPlzqw+2t247Ld5k/zSaYM59ZxccC2x1//P0oafhDOnSK/KVUd31d6jtwf0bqN5BH6t8/8H6jzfwuczuDx02TtSva3R47nLfi82wK2z7Yh+m+goH+gMGOV8Ij7153/T+d+cHXL/DxpLiv8=
+  </data>
+ </layer>
+ <layer name="02. Water" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJxjYKA+kGNlYJAHYgVWGhg+av+QsZ8HiLkGwA0w+wcqDEyAdiqOhgE8DAY6HY7aP2r/QNo/WgYMfByM2j9q/0iznwNoJzcQKwGx2QCWPyM57AfK/oEs+5H9PhBpb6DrPbkB9Duy/cT4HQArUQ9b
+  </data>
+ </layer>
+ <layer name="03. Path" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztlVsOgjAQReePVSq4DXxsA9yaugN1B2q8TWy8TKCM2qYf9iT3h4Y5cHlUpFAoFP6DBbKkpJpbI4dK5Iicqvd6g6wpYzPqL3x67gY5w3tBrkir1ndIr2a2dO6cV/v03D1yg/eOPJDudbyndU3IP+X1vtBcK96/kmG3Ie8vPs9cp6m8MuLVfbpsZfhexcRyXx1dg3s2lu/DCr83oU75+4ndwRR8PSk7sJKjA4Y7yOF3WP6RxV/8KXD7RJPJz+4cfv73uL0i1v73qT+Hm/2xe38ChSFbaA==
+  </data>
+ </layer>
+ <layer name="04. Buildings" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztzUENgDAUwNB/nRw2LMCwAAbAA4inl1ngJ6Qv6bkRkqSpRFRqNJfv/wvPlTptCf+d50EnXQn/4eb9JP4lSZL+7AVMuQTc
+  </data>
+ </layer>
+ <layer name="05." width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20PBxQAAADwbhAAAAE=
+  </data>
+ </layer>
+ <layer name="06." width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20PBxQAAADwbhAAAAE=
+  </data>
+ </layer>
+ <layer name="07." width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20PBxQAAADwbhAAAAE=
+  </data>
+ </layer>
+ <layer name="08." width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20PBxQAAADwbhAAAAE=
+  </data>
+ </layer>
+ <layer name="09. NPC" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20PBxQAAADwbhAAAAE=
+  </data>
+ </layer>
+ <layer name="10. Player" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20PBxQAAADwbhAAAAE=
+  </data>
+ </layer>
+ <layer name="11. NPC" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20PBxQAAADwbhAAAAE=
+  </data>
+ </layer>
+ <layer name="12. Above player" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztzcEJACAUw9Beq66g3/2ntFMoSB7kHAkAJFtqqafh+/+Z50qV9oM/AAAA8LsDwI4A7Q==
+  </data>
+ </layer>
+ <layer name="13. Collisions" width="32" height="32" opacity="0.4">
+  <data encoding="base64" compression="zlib">
+   eJzt1ksKACAIBNB23f9ynadthJlEOkMWuOrzBoSw1VIauG4v69vf9/e197P4K8PLlzJk8+cM2hnpvGcuZn/MEWEj+x/pSw6D77nQ/pyB0Y/swfdz+Uz/j7b/oo+ef5A+ev61zlEsvqVO7+2qA55CwIQ=
+  </data>
+ </layer>
+</map>
