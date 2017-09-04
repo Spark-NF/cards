@@ -8768,7 +8768,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 357a0f7744ed00542a04c3df1f1b02b9, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11988,6 +11988,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+  - first: {x: 4856, y: 5863, z: 0}
+    second:
+      m_TileIndex: 21
+      m_TileSpriteIndex: 21
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 1
@@ -12032,7 +12041,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 880a6de10b0d672489c1c11899f24e28, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 0a5278ea9ed9bfd4882e529e6638a034, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 9fb1f451f6b1e8342b8bbb90f4fe39e4, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
@@ -12077,10 +12086,10 @@ Tilemap:
     m_Data: {fileID: 21300200, guid: 91b402b78242ea94ca6a32464267db94, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300202, guid: 91b402b78242ea94ca6a32464267db94, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 21300258, guid: 91b402b78242ea94ca6a32464267db94, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 120
+  - m_RefCount: 121
     m_Data:
       e00: 1
       e01: 0
@@ -12099,12 +12108,12 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 120
+  - m_RefCount: 121
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -6, y: -16, z: 0}
-  m_Size: {x: 18, y: 23, z: 1}
+  m_Size: {x: 4863, y: 5880, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
