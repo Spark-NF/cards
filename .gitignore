@@ -1,9 +1,13 @@
+*.lnk
+
+# Build directories
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
 
+# Plugins
 /Assets/AssetStoreTools*
 /Assets/Plugins/GitHub.meta
 /Assets/Plugins/GitHub/
