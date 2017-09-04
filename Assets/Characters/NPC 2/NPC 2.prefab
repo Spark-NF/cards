@@ -93,9 +93,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   canMove: 1
-  moveDuration: 2
+  moveDuration: 1
   waitDuration: 4
-  moveDistance: 2
+  moveDistance: 1
   randomizeDuration: 1
 --- !u!212 &212078925780479414
 SpriteRenderer:
