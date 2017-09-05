@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-public class Player : MonoBehaviour
+public class GamePlayer : MonoBehaviour
 {
-	public Player()
+	public GamePlayer()
 	{
 		Game.Current.Player = this;
 	}

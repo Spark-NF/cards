@@ -18,7 +18,7 @@ class CardInstance
 
 	public void Equip(CardInstance equipment)
 	{
-		Equipments.Append(equipment);
+		Equipments.Add(equipment);
 	}
 
 	public void Attack(CardInstance other)
@@ -26,7 +26,7 @@ class CardInstance
 		if (_isTapped)
 			return;
 
-		other.Life -= Card.strength;
+		other.Life -= Card.Strength;
 		if (other.Life <= 0)
 			other.Die();
 

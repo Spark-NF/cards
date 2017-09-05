@@ -10,8 +10,8 @@ class MatchSide
 	public Stack<Card> Pick = new Stack<Card>();
 	public Stack<Card> Trash = new Stack<Card>();
 	public List<Card> Hand = new List<Card>();
-	public List<CardInstance> Front = new List<CardInstance>;
-	public List<CardInstance> Back = new List<CardInstance>;
+	public List<CardInstance> Front = new List<CardInstance>();
+	public List<CardInstance> Back = new List<CardInstance>();
 
 	private bool _hasPutResource = false;
 
@@ -19,10 +19,10 @@ class MatchSide
 	{
 		Player = player;
 		MaxLife = life;
-		CurrentLife = maxLife;
+		CurrentLife = MaxLife;
 
 		// We have to make a copy of the cards first because Shuffle() operates in place
-		var cards = new List<Card>(deck.cards);
+		var cards = new List<Card>(deck.Cards);
 		cards.Shuffle();
 
 		Pick = new Stack<Card>(cards);
@@ -55,7 +55,7 @@ class MatchSide
 
 	public void PickCard()
 	{
-		Hand.Append(Pick.Pop());
+		Hand.Add(Pick.Pop());
 	}
 
 	public void PutCard(Card card)
@@ -64,7 +64,7 @@ class MatchSide
 		if (!Hand.Contains(card))
 			return;
 
-		Hand.RemoveFirst(card);
+		Hand.Remove(card);
 
 		// You can only put one resource per turn
 		if (card.Type == CardType.Resource && _hasPutResource)
@@ -73,7 +73,7 @@ class MatchSide
 		var cardInstance = new CardInstance(card, this);
 		var row = card.Type == CardType.Resource ? Back : Front;
 
-		row.Append(cardInstance);
+		row.Add(cardInstance);
 	}
 
 	public void RemoveCardInstance(CardInstance cardInstance)
@@ -81,6 +81,6 @@ class MatchSide
 		Front.Remove(cardInstance);
 		Back.Remove(cardInstance);
 
-		Trash.Stack(cardInstance.Card);
+		Trash.Push(cardInstance.Card);
 	}
 }

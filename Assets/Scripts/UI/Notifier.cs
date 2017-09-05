@@ -24,7 +24,7 @@ public class Notifier : MonoBehaviour
 		}
 
 		TextBox.text = txt.Replace("\\n", "\n");
-		TextBox.SetActive(true);
+        Canvas.SetActive(true);
 		_animator.Play("Slide In");
 
 		yield return new WaitForSeconds(duration);

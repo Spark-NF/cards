@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 [Serializable]
 public class Deck
@@ -9,11 +10,11 @@ public class Deck
 
 	public bool IsValid(List<Card> cards)
 	{
-		Dictionnary<int, int> cardCount = cards.GroupBy(x => x.Id).ToDictionnary(g => g.Id, g.Count);
+		Dictionary<int, int> cardCount = cards.GroupBy(x => x.Id).ToDictionary(g => g.Key, g => g.Count());
 
 		foreach (Card card in Cards)
 		{
-			if (!cardCount.Contains(card.Id) || --cardCount[card.Id] < 0)
+			if (!cardCount.ContainsKey(card.Id) || --cardCount[card.Id] < 0)
 				return false;
 		}
 

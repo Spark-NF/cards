@@ -1,3 +1,5 @@
+using System;
+
 class Match
 {
 	private MatchSide[] _sides;
@@ -37,6 +39,6 @@ class Match
 	public void NextTurn()
 	{
 		_currentSide = (_currentSide + 1) % _sides.Length;
-		BeginStep(MatchStep.Begin_Untap);
+		BeginStep(MatchStep.Untap);
 	}
 }

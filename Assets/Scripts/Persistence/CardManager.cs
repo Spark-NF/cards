@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 public class CardManager
 {
@@ -11,7 +13,9 @@ public class CardManager
 
 	public Card RandomCard()
 	{
-		return cards[(int)System.Math.Floor(Random.value * cards.Length)];
+        int index = (int)System.Math.Floor(Random.value * _cards.Count);
+        var keys = _cards.Keys.ToArray();
+        return _cards[keys[index]];
 	}
 
 	public List<Card> RandomCards(int count)

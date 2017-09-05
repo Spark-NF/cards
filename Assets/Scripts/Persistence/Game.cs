@@ -4,7 +4,7 @@ public class Game
 {
 	public static Game Current = new Game();
 
-	public Player Player = null;
+	public GamePlayer Player = null;
 	public CardManager CardManager = null;
 
 	public GameSave Save()
