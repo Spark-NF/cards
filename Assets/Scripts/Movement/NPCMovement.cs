@@ -15,7 +15,7 @@ public class NPCMovement : CharacterMovement
 
 	public void LateUpdate()
 	{
-		GameObject player = GameObject.FindWithTag("Player");
+		var player = GameObject.FindWithTag("Player");
 		bool above = player.transform.position.y > transform.position.y;
 		GetComponent<SpriteRenderer>().sortingOrder = player.GetComponent<SpriteRenderer>().sortingOrder + (above ? 1 : -1);
 	}

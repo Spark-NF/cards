@@ -31,9 +31,9 @@ public abstract class CharacterMovement : MonoBehaviour
 		if (hasVector)
 		{
 			LookAt(movementVector);
-		}
 
-		_rigidbody.MovePosition(_rigidbody.position + movementVector * Time.deltaTime * speed);
+			_rigidbody.MovePosition(_rigidbody.position + movementVector * Time.deltaTime * speed);
+		}
 	}
 
 	public void SetFrozen(bool frz)
