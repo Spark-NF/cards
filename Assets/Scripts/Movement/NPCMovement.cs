@@ -11,11 +11,23 @@ public class NPCMovement : CharacterMovement
 
 	private bool _isMoving = false;
 
+	private GameObject _player;
+	private SpriteRenderer _spriteRenderer;
+	private SpriteRenderer _playerSpriteRenderer;
+
+	public new void Start()
+	{
+		base.Start();
+
+		_player = GameObject.FindWithTag("Player");
+		_spriteRenderer = GetComponent<SpriteRenderer>();
+		_playerSpriteRenderer = _player.GetComponent<SpriteRenderer>();
+	}
+
 	public void LateUpdate()
 	{
-		var player = GameObject.FindWithTag("Player");
-		bool above = player.transform.position.y > transform.position.y;
-		GetComponent<SpriteRenderer>().sortingOrder = player.GetComponent<SpriteRenderer>().sortingOrder + (above ? 1 : -1);
+		bool above = _player.transform.position.y > transform.position.y;
+		_spriteRenderer.sortingOrder = _playerSpriteRenderer.sortingOrder + (above ? 1 : -1);
 	}
 
 	public void Update()
