@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class NPCMovement : CharacterMovement
 {
@@ -8,10 +9,7 @@ public class NPCMovement : CharacterMovement
 	public float MoveDistance = 2.0f;
 	public float RandomizeDuration = 1.0f;
 
-	private bool _isMoving = true;
-	private float _lastMove = 0f;
-	private float _nextMove = 0f;
-	private Vector2 _destination;
+	private bool _isMoving = false;
 
 	public void LateUpdate()
 	{
@@ -25,29 +23,40 @@ public class NPCMovement : CharacterMovement
 		if (!CanMove)
 			return;
 
-		if (Time.time > _lastMove + _nextMove)
+		if (!_isMoving)
+			StartCoroutine(WaitAndMove());
+	}
+
+	private float Randomize(float duration)
+	{
+		return duration + (Random.value - 0.5f) * RandomizeDuration;
+	}
+
+	private IEnumerator WaitAndMove()
+	{
+		_isMoving = true;
+
+		// Wait for next move
+		yield return new WaitForSeconds(Randomize(WaitDuration));
+
+		// Determine our next destination
+		bool x = Random.value > 0.5f;
+		float dist = (Random.value * 2f - 1f) * MoveDistance;
+		var destination = new Vector2(x ? dist : 0, x ? 0 : dist);
+
+		// Move to the distation
+		float moveDuration = Randomize(MoveDuration);
+		float time = 0f;
+		while (time < moveDuration)
 		{
-			if (!_isMoving)
-			{
-				bool x = Random.value > 0.5f;
-				float dist = (Random.value * 2f - 1f) * MoveDistance;
-
-				_destination = new Vector2(x ? dist : 0, x ? 0 : dist);
-			}
-			else
-			{
-				Move(Vector2.zero);
-			}
-
-			_lastMove = Time.time;
-			_isMoving = !_isMoving;
-			_nextMove = (_isMoving ? MoveDuration : WaitDuration) + (Random.value - 0.5f) * RandomizeDuration;
+			time += Time.deltaTime;
+			Move(destination);
+			yield return null;
 		}
 
-		if (_isMoving)
-		{
-			Move(_destination);
-		}
+		Move(Vector2.zero);
+
+		_isMoving = false;
 	}
 
 	private void OnTriggerEnter(Collider other)
