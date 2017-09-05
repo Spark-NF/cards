@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class SaveSlot : MonoBehaviour
 {
 	public int slot;
-	public GameObject saveButton = null;
-	public GameObject loadButton = null;
-	public GameObject deleteButton = null;
+	public Button saveButton = null;
+	public Button loadButton = null;
+	public Button deleteButton = null;
 
 	void OnEnable()
 	{
@@ -19,7 +19,7 @@ public class SaveSlot : MonoBehaviour
 	{
 		if (saveButton != null)
 		{
-			saveButton.GetComponent<Button>().onClick.AddListener(() =>
+			saveButton.onClick.AddListener(() =>
 			{
 				SaveManager.Save(slot);
 				UpdateStatus();
@@ -28,7 +28,7 @@ public class SaveSlot : MonoBehaviour
 
 		if (loadButton != null)
 		{
-			loadButton.GetComponent<Button>().onClick.AddListener(() =>
+			loadButton.onClick.AddListener(() =>
 			{
 				if (SceneManager.GetActiveScene().name != "World")
 				{
@@ -45,7 +45,7 @@ public class SaveSlot : MonoBehaviour
 
 		if (deleteButton != null)
 		{
-			deleteButton.GetComponent<Button>().onClick.AddListener(() =>
+			deleteButton.onClick.AddListener(() =>
 			{
 				SaveManager.Delete(slot);
 				UpdateStatus();
@@ -58,12 +58,9 @@ public class SaveSlot : MonoBehaviour
 		bool enabled = SaveManager.HasSave(slot);
 
 		if (loadButton != null)
-		{
-			loadButton.GetComponent<Button>().interactable = enabled;
-		}
-		if (deleteButton)
-		{
-			deleteButton.GetComponent<Button>().interactable = enabled;
-		}
+			loadButton.interactable = enabled;
+
+		if (deleteButton != null)
+			loadButton.interactable = enabled;
 	}
 }
