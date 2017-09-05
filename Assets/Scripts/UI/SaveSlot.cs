@@ -5,30 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class SaveSlot : MonoBehaviour
 {
-    public int slot;
-    public GameObject saveButton = null;
-    public GameObject loadButton = null;
-    public GameObject deleteButton = null;
+	public int slot;
+	public GameObject saveButton = null;
+	public GameObject loadButton = null;
+	public GameObject deleteButton = null;
 
-    void OnEnable()
-    {
-        UpdateStatus();
-    }
+	void OnEnable()
+	{
+		UpdateStatus();
+	}
 
-    void Start()
-    {
-        if (saveButton != null)
-        {
-            saveButton.GetComponent<Button>().onClick.AddListener(() =>
-            {
-                SaveManager.Save(slot);
-                UpdateStatus();
-            });
-        }
+	void Start()
+	{
+		if (saveButton != null)
+		{
+			saveButton.GetComponent<Button>().onClick.AddListener(() =>
+			{
+				SaveManager.Save(slot);
+				UpdateStatus();
+			});
+		}
 
-        if (loadButton != null)
-        {
-            loadButton.GetComponent<Button>().onClick.AddListener(() =>
+		if (loadButton != null)
+		{
+			loadButton.GetComponent<Button>().onClick.AddListener(() =>
 			{
 				if (SceneManager.GetActiveScene().name != "World")
 				{
@@ -40,30 +40,30 @@ public class SaveSlot : MonoBehaviour
 					SaveManager.Load(slot);
 					UpdateStatus();
 				}
-            });
-        }
+			});
+		}
 
-        if (deleteButton != null)
-        {
-            deleteButton.GetComponent<Button>().onClick.AddListener(() =>
-            {
-                SaveManager.Delete(slot);
-                UpdateStatus();
-            });
-        }
-    }
+		if (deleteButton != null)
+		{
+			deleteButton.GetComponent<Button>().onClick.AddListener(() =>
+			{
+				SaveManager.Delete(slot);
+				UpdateStatus();
+			});
+		}
+	}
 
-    public void UpdateStatus()
-    {
-        bool enabled = SaveManager.HasSave(slot);
+	public void UpdateStatus()
+	{
+		bool enabled = SaveManager.HasSave(slot);
 
-        if (loadButton != null)
-        {
-            loadButton.GetComponent<Button>().interactable = enabled;
-        }
-        if (deleteButton)
-        {
-            deleteButton.GetComponent<Button>().interactable = enabled;
-        }
-    }
+		if (loadButton != null)
+		{
+			loadButton.GetComponent<Button>().interactable = enabled;
+		}
+		if (deleteButton)
+		{
+			deleteButton.GetComponent<Button>().interactable = enabled;
+		}
+	}
 }

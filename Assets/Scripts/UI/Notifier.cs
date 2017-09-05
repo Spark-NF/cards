@@ -35,9 +35,9 @@ public class Notifier : MonoBehaviour
 	{
 		canvas.SetActive(false);
 	}
-    
-    public void Close()
-    {
-        anim.Play("Slide Out");
-    }
+
+	public void Close()
+	{
+		anim.Play("Slide Out");
+	}
 }
