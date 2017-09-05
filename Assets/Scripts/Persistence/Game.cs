@@ -5,6 +5,7 @@ public class Game
 	public static Game current = new Game();
 
 	public Player player = null;
+	public CardManager CardManager = null;
 
 	public GameSave Save()
 	{
@@ -23,5 +24,7 @@ public class Game
 		Vector2 playerPos = new Vector2(gs.playerPositionX, gs.playerPositionY);
 		player.transform.position = playerPos;
 		Camera.main.transform.position = new Vector3(playerPos.x, playerPos.y, Camera.main.transform.position.z);
+
+		CardManager = new CardManager();
 	}
 }

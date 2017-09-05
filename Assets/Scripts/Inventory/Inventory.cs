@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 
-class Inventory
+[Serializable]
+public class Inventory
 {
     public int Money = 0;
-	public List<Card> Cards = new List<Card>();
+	public CardList Cards = new CardList();
 	public List<Deck> Decks = new List<Deck>();
 }
