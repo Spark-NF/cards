@@ -9,7 +9,7 @@ public abstract class CharacterMovement : MonoBehaviour
 	private Rigidbody2D _rigidbody;
 	private Animator _animator;
 
-	private void Start()
+	public void Start()
 	{
 		_rigidbody = GetComponent<Rigidbody2D>();
 		_animator = GetComponent<Animator>();

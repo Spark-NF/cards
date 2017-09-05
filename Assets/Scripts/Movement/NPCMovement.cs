@@ -49,4 +49,14 @@ public class NPCMovement : CharacterMovement
 			Move(_destination);
 		}
 	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		// Stop moving if we are close to the player
+		if (other.CompareTag("Player"))
+		{
+			_isMoving = false;
+			Move(Vector2.zero);
+		}
+	}
 }
