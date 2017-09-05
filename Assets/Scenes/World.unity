@@ -159,10 +159,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ab2634509380344b7e59c70667132e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot: 1
-  saveButton: {fileID: 0}
-  loadButton: {fileID: 951379772}
-  deleteButton: {fileID: 1896127711}
+  Slot: 1
+  SaveButton: {fileID: 0}
+  LoadButton: {fileID: 951379774}
+  DeleteButton: {fileID: 1896127713}
 --- !u!1 &76834027
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,10 +939,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ab2634509380344b7e59c70667132e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot: 1
-  saveButton: {fileID: 177274879}
-  loadButton: {fileID: 0}
-  deleteButton: {fileID: 0}
+  Slot: 1
+  SaveButton: {fileID: 177274881}
+  LoadButton: {fileID: 0}
+  DeleteButton: {fileID: 0}
 --- !u!1 &187466327
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,10 +1550,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ab2634509380344b7e59c70667132e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot: 3
-  saveButton: {fileID: 0}
-  loadButton: {fileID: 582063727}
-  deleteButton: {fileID: 217794908}
+  Slot: 3
+  SaveButton: {fileID: 0}
+  LoadButton: {fileID: 582063729}
+  DeleteButton: {fileID: 217794910}
 --- !u!1 &296459892
 GameObject:
   m_ObjectHideFlags: 0
@@ -6318,10 +6318,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ab2634509380344b7e59c70667132e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot: 2
-  saveButton: {fileID: 733145200}
-  loadButton: {fileID: 0}
-  deleteButton: {fileID: 0}
+  Slot: 2
+  SaveButton: {fileID: 733145202}
+  LoadButton: {fileID: 0}
+  DeleteButton: {fileID: 0}
 --- !u!1 &766847316
 GameObject:
   m_ObjectHideFlags: 0
@@ -6997,10 +6997,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ab2634509380344b7e59c70667132e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot: 0
-  saveButton: {fileID: 0}
-  loadButton: {fileID: 609600610}
-  deleteButton: {fileID: 1369199863}
+  Slot: 0
+  SaveButton: {fileID: 0}
+  LoadButton: {fileID: 609600612}
+  DeleteButton: {fileID: 1369199865}
 --- !u!1 &942165368
 GameObject:
   m_ObjectHideFlags: 0
@@ -7681,10 +7681,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ab2634509380344b7e59c70667132e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot: 3
-  saveButton: {fileID: 1052202753}
-  loadButton: {fileID: 0}
-  deleteButton: {fileID: 0}
+  Slot: 3
+  SaveButton: {fileID: 1052202755}
+  LoadButton: {fileID: 0}
+  DeleteButton: {fileID: 0}
 --- !u!1 &1052880028
 GameObject:
   m_ObjectHideFlags: 0
@@ -8777,7 +8777,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1212829383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 375.897, y: 310.04584, z: 0}
+  m_LocalPosition: {x: 367.96228, y: 316.74838, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 105224049}
@@ -9065,10 +9065,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ab2634509380344b7e59c70667132e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot: 4
-  saveButton: {fileID: 1234902677}
-  loadButton: {fileID: 0}
-  deleteButton: {fileID: 0}
+  Slot: 4
+  SaveButton: {fileID: 1234902679}
+  LoadButton: {fileID: 0}
+  DeleteButton: {fileID: 0}
 --- !u!1 &1241037926
 GameObject:
   m_ObjectHideFlags: 0
@@ -10524,7 +10524,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 0.90900004
+  orthographic size: 1.0287501
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -10867,16 +10867,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b349bb5ac710346bfff8183cb1480f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 296459892}
-  pausePanel: {fileID: 356000332}
-  savePanel: {fileID: 1303562103}
-  loadPanel: {fileID: 1074562205}
-  optionsPanel: {fileID: 1119058706}
-  firstSelectedPause: {fileID: 1398658167}
-  firstSelectedOptions: {fileID: 1277809299}
-  optionsSfx: {fileID: 115913000}
-  optionsMusic: {fileID: 1926349253}
-  stopTime: 1
+  MainCanvas: {fileID: 296459892}
+  PausePanel: {fileID: 356000332}
+  SavePanel: {fileID: 1303562103}
+  LoadPanel: {fileID: 1074562205}
+  OptionsPanel: {fileID: 1119058706}
+  FirstSelectedPause: {fileID: 1398658167}
+  FirstSelectedOptions: {fileID: 1277809299}
+  OptionsSfx: {fileID: 115913000}
+  OptionsMusic: {fileID: 1926349253}
+  StopTime: 1
 --- !u!114 &1603721070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10941,8 +10941,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1603721068}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 549.5, y: 454.5, z: 0}
-  m_LocalScale: {x: 1.4426472, y: 1.4426472, z: 1.4426472}
+  m_LocalPosition: {x: 477, y: 411.5, z: 0}
+  m_LocalScale: {x: 1.2789497, y: 1.2789497, z: 1.2789497}
   m_Children:
   - {fileID: 1449092187}
   - {fileID: 296459893}
@@ -12968,10 +12968,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ab2634509380344b7e59c70667132e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot: 0
-  saveButton: {fileID: 1836775423}
-  loadButton: {fileID: 0}
-  deleteButton: {fileID: 0}
+  Slot: 0
+  SaveButton: {fileID: 1836775425}
+  LoadButton: {fileID: 0}
+  DeleteButton: {fileID: 0}
 --- !u!1 &1858399213
 GameObject:
   m_ObjectHideFlags: 0
@@ -13935,10 +13935,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ab2634509380344b7e59c70667132e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot: 4
-  saveButton: {fileID: 0}
-  loadButton: {fileID: 1858399213}
-  deleteButton: {fileID: 1575276938}
+  Slot: 4
+  SaveButton: {fileID: 0}
+  LoadButton: {fileID: 1858399215}
+  DeleteButton: {fileID: 1575276940}
 --- !u!1 &2003964621
 GameObject:
   m_ObjectHideFlags: 0
@@ -14253,10 +14253,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ab2634509380344b7e59c70667132e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot: 2
-  saveButton: {fileID: 0}
-  loadButton: {fileID: 525998701}
-  deleteButton: {fileID: 1190750987}
+  Slot: 2
+  SaveButton: {fileID: 0}
+  LoadButton: {fileID: 525998703}
+  DeleteButton: {fileID: 1190750989}
 --- !u!1 &2108622598
 GameObject:
   m_ObjectHideFlags: 0
@@ -14280,7 +14280,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2108622598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 315.04584, z: 0}
+  m_LocalPosition: {x: 0, y: 321.74838, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1945699248}
@@ -14303,8 +14303,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1fe7af1ef4acdb478d2aae93f370ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 1945699247}
-  textBox: {fileID: 1703323338}
+  Canvas: {fileID: 1945699247}
+  TextBox: {fileID: 1703323338}
 --- !u!1001 &2121773306
 Prefab:
   m_ObjectHideFlags: 0

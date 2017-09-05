@@ -375,10 +375,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ab2634509380344b7e59c70667132e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot: 1
-  saveButton: {fileID: 0}
-  loadButton: {fileID: 529365492}
-  deleteButton: {fileID: 1128586653}
+  Slot: 1
+  SaveButton: {fileID: 0}
+  LoadButton: {fileID: 529365494}
+  DeleteButton: {fileID: 1128586655}
 --- !u!1 &184336465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1603,10 +1603,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ab2634509380344b7e59c70667132e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot: 3
-  saveButton: {fileID: 0}
-  loadButton: {fileID: 747215307}
-  deleteButton: {fileID: 1335590708}
+  Slot: 3
+  SaveButton: {fileID: 0}
+  LoadButton: {fileID: 747215309}
+  DeleteButton: {fileID: 1335590710}
 --- !u!1 &629627734
 GameObject:
   m_ObjectHideFlags: 0
@@ -2541,10 +2541,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ab2634509380344b7e59c70667132e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot: 0
-  saveButton: {fileID: 0}
-  loadButton: {fileID: 371640504}
-  deleteButton: {fileID: 1871054933}
+  Slot: 0
+  SaveButton: {fileID: 0}
+  LoadButton: {fileID: 371640506}
+  DeleteButton: {fileID: 1871054935}
 --- !u!1 &1086469732
 GameObject:
   m_ObjectHideFlags: 0
@@ -2885,10 +2885,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ab2634509380344b7e59c70667132e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot: 2
-  saveButton: {fileID: 0}
-  loadButton: {fileID: 1658340465}
-  deleteButton: {fileID: 807897740}
+  Slot: 2
+  SaveButton: {fileID: 0}
+  LoadButton: {fileID: 1658340467}
+  DeleteButton: {fileID: 807897742}
 --- !u!1 &1335590708
 GameObject:
   m_ObjectHideFlags: 0
@@ -3429,10 +3429,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ab2634509380344b7e59c70667132e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot: 4
-  saveButton: {fileID: 0}
-  loadButton: {fileID: 2048291729}
-  deleteButton: {fileID: 537314357}
+  Slot: 4
+  SaveButton: {fileID: 0}
+  LoadButton: {fileID: 2048291731}
+  DeleteButton: {fileID: 537314359}
 --- !u!1 &1538274468
 GameObject:
   m_ObjectHideFlags: 0
@@ -3903,18 +3903,7 @@ MonoBehaviour:
   m_Value: 8
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1687749115}
-        m_MethodName: OptionsMusic
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1687749110
@@ -4000,8 +3989,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1687749110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 595, y: 454.5, z: 0}
-  m_LocalScale: {x: 1.501187, y: 1.501187, z: 1.501187}
+  m_LocalPosition: {x: 477, y: 411.5, z: 0}
+  m_LocalScale: {x: 1.2789497, y: 1.2789497, z: 1.2789497}
   m_Children:
   - {fileID: 1757793702}
   - {fileID: 1538274469}
@@ -4025,12 +4014,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da65b467f3c60f64fafbf7fa27ca40da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainPanel: {fileID: 1757793701}
-  loadPanel: {fileID: 1538274468}
-  optionsPanel: {fileID: 1499607727}
-  firstSelectedMain: {fileID: 860698088}
-  optionsSfx: {fileID: 1783588047}
-  optionsMusic: {fileID: 1687337823}
+  MainPanel: {fileID: 1757793701}
+  LoadPanel: {fileID: 1538274468}
+  OptionsPanel: {fileID: 1499607727}
+  FirstSelectedMain: {fileID: 860698088}
+  OptionsSfx: {fileID: 1783588047}
+  OptionsMusic: {fileID: 1687337823}
 --- !u!1 &1699410952
 GameObject:
   m_ObjectHideFlags: 0
@@ -4487,18 +4476,7 @@ MonoBehaviour:
   m_Value: 8
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1687749115}
-        m_MethodName: OptionsSfx
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1787108443

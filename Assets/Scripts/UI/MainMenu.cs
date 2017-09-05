@@ -5,19 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-	public GameObject mainPanel;
-	public GameObject loadPanel;
-	public GameObject optionsPanel;
-	public GameObject firstSelectedMain;
-	public Slider optionsSfx;
-	public Slider optionsMusic;
-	private bool optionsChanged = false;
+	public GameObject MainPanel;
+	public GameObject LoadPanel;
+	public GameObject OptionsPanel;
+	public GameObject FirstSelectedMain;
+	public Slider OptionsSfx;
+	public Slider OptionsMusic;
 
 	#region Main
 
 	public void Start()
 	{
-		EventSystem.current.SetSelectedGameObject(firstSelectedMain);
+		EventSystem.current.SetSelectedGameObject(FirstSelectedMain);
 	}
 
 	public void NewGame()
@@ -27,16 +26,16 @@ public class MainMenu : MonoBehaviour
 
 	public void Load()
 	{
-		mainPanel.SetActive(false);
-		loadPanel.SetActive(true);
+		MainPanel.SetActive(false);
+		LoadPanel.SetActive(true);
 	}
 
 	public void Options()
 	{
 		OptionsLoad();
 
-		mainPanel.SetActive(false);
-		optionsPanel.SetActive(true);
+		MainPanel.SetActive(false);
+		OptionsPanel.SetActive(true);
 	}
 
 	public void Exit()
@@ -50,41 +49,22 @@ public class MainMenu : MonoBehaviour
 
 	public void OptionsLoad()
 	{
-		optionsSfx.value = PlayerPrefs.GetInt("Sfx", 8);
-		optionsMusic.value = PlayerPrefs.GetInt("Music", 8);
-
-		optionsChanged = false;
+		OptionsSfx.value = PlayerPrefs.GetInt("Sfx", 8);
+		OptionsMusic.value = PlayerPrefs.GetInt("Music", 8);
 	}
 
 	public void OptionsSave()
 	{
-		PlayerPrefs.SetInt("Sfx", (int)optionsSfx.value);
-		PlayerPrefs.SetInt("Music", (int)optionsMusic.value);
-
-		optionsChanged = false;
+		PlayerPrefs.SetInt("Sfx", (int)OptionsSfx.value);
+		PlayerPrefs.SetInt("Music", (int)OptionsMusic.value);
 	}
 
 	public void OptionsBack()
 	{
-		if (optionsChanged)
-		{
-			OptionsSave();
-		}
+		OptionsSave();
 
-		optionsPanel.SetActive(false);
-		mainPanel.SetActive(true);
-	}
-
-	public void OptionsSfx()
-	{
-		Debug.Log("Update SFX volume");
-		optionsChanged = true;
-	}
-
-	public void OptionsMusic()
-	{
-		Debug.Log("Update music volume");
-		optionsChanged = true;
+		OptionsPanel.SetActive(false);
+		MainPanel.SetActive(true);
 	}
 
 	#endregion
@@ -93,8 +73,8 @@ public class MainMenu : MonoBehaviour
 
 	public void LoadBack()
 	{
-		loadPanel.SetActive(false);
-		mainPanel.SetActive(true);
+		LoadPanel.SetActive(false);
+		MainPanel.SetActive(true);
 	}
 
 	#endregion

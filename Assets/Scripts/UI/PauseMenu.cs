@@ -5,17 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-	public GameObject pauseMenu;
-	public GameObject pausePanel;
-	public GameObject savePanel;
-	public GameObject loadPanel;
-	public GameObject optionsPanel;
-	public GameObject firstSelectedPause;
-	public GameObject firstSelectedOptions;
-	public Slider optionsSfx;
-	public Slider optionsMusic;
-	public bool stopTime = true;
-	private bool optionsChanged = false;
+	public GameObject MainCanvas;
+	public GameObject PausePanel;
+	public GameObject SavePanel;
+	public GameObject LoadPanel;
+	public GameObject OptionsPanel;
+	public GameObject FirstSelectedPause;
+	public GameObject FirstSelectedOptions;
+	public Slider OptionsSfx;
+	public Slider OptionsMusic;
+	public bool StopTime = true;
 
 	void Update()
 	{
@@ -27,7 +26,7 @@ public class PauseMenu : MonoBehaviour
 
 	public void Toggle()
 	{
-		if (pauseMenu.activeSelf)
+		if (MainCanvas.activeSelf)
 		{
 			Hide();
 		}
@@ -40,18 +39,18 @@ public class PauseMenu : MonoBehaviour
 	public void Show()
 	{
 		// Activate the correct panel
-		pauseMenu.SetActive(true);
-		pausePanel.SetActive(true);
-		savePanel.SetActive(false);
-		loadPanel.SetActive(false);
-		optionsPanel.SetActive(false);
+		MainCanvas.SetActive(true);
+		PausePanel.SetActive(true);
+		SavePanel.SetActive(false);
+		LoadPanel.SetActive(false);
+		OptionsPanel.SetActive(false);
 
 		// Select first menu element
 		EventSystem es = EventSystem.current;
-		es.SetSelectedGameObject(firstSelectedPause);
+		es.SetSelectedGameObject(FirstSelectedPause);
 
 		// Stop time
-		if (stopTime)
+		if (StopTime)
 		{
 			Time.timeScale = 0f;
 		}
@@ -60,14 +59,14 @@ public class PauseMenu : MonoBehaviour
 	public void Hide()
 	{
 		// Activate the correct panel
-		pauseMenu.SetActive(false);
-		pausePanel.SetActive(true);
-		savePanel.SetActive(false);
-		loadPanel.SetActive(false);
-		optionsPanel.SetActive(false);
+		MainCanvas.SetActive(false);
+		PausePanel.SetActive(true);
+		SavePanel.SetActive(false);
+		LoadPanel.SetActive(false);
+		OptionsPanel.SetActive(false);
 
 		// Resume time
-		if (stopTime)
+		if (StopTime)
 		{
 			Time.timeScale = 1f;
 		}
@@ -75,22 +74,22 @@ public class PauseMenu : MonoBehaviour
 
 	public void Save()
 	{
-		pausePanel.SetActive(false);
-		savePanel.SetActive(true);
+		PausePanel.SetActive(false);
+		SavePanel.SetActive(true);
 	}
 
 	public void Load()
 	{
-		pausePanel.SetActive(false);
-		loadPanel.SetActive(true);
+		PausePanel.SetActive(false);
+		LoadPanel.SetActive(true);
 	}
 
 	public void Options()
 	{
 		OptionsLoad();
 
-		pausePanel.SetActive(false);
-		optionsPanel.SetActive(true);
+		PausePanel.SetActive(false);
+		OptionsPanel.SetActive(true);
 	}
 
 	public void Title()
@@ -110,52 +109,33 @@ public class PauseMenu : MonoBehaviour
 
 	public void OptionsLoad()
 	{
-		optionsSfx.value = PlayerPrefs.GetInt("Sfx", 8);
-		optionsMusic.value = PlayerPrefs.GetInt("Music", 8);
-
-		optionsChanged = false;
+		OptionsSfx.value = PlayerPrefs.GetInt("Sfx", 8);
+		OptionsMusic.value = PlayerPrefs.GetInt("Music", 8);
 	}
 
 	public void OptionsSave()
 	{
-		PlayerPrefs.SetInt("Sfx", (int)optionsSfx.value);
-		PlayerPrefs.SetInt("Music", (int)optionsMusic.value);
-
-		optionsChanged = false;
+		PlayerPrefs.SetInt("Sfx", (int)OptionsSfx.value);
+		PlayerPrefs.SetInt("Music", (int)OptionsMusic.value);
 	}
 
 	public void OptionsBack()
 	{
-		if (optionsChanged)
-		{
-			OptionsSave();
-		}
+		OptionsSave();
 
-		optionsPanel.SetActive(false);
-		pausePanel.SetActive(true);
-	}
-
-	public void OptionsSfx()
-	{
-		Debug.Log("Update SFX volume");
-		optionsChanged = true;
-	}
-
-	public void OptionsMusic()
-	{
-		Debug.Log("Update music volume");
-		optionsChanged = true;
+		OptionsPanel.SetActive(false);
+		PausePanel.SetActive(true);
 	}
 
 	public void SaveBack()
 	{
-		savePanel.SetActive(false);
-		pausePanel.SetActive(true);
+		SavePanel.SetActive(false);
+		PausePanel.SetActive(true);
 	}
 
 	public void LoadBack()
 	{
-		loadPanel.SetActive(false);
-		pausePanel.SetActive(true);
+		LoadPanel.SetActive(false);
+		PausePanel.SetActive(true);
 	}
 }
