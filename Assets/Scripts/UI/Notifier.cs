@@ -4,14 +4,15 @@ using System.Collections;
 
 public class Notifier : MonoBehaviour
 {
-	public GameObject canvas;
-	public Text textBox;
-	private Animator anim;
+	public GameObject Canvas;
+	public Text TextBox;
+
+	private Animator _animator;
 
 	void Start()
 	{
-		canvas.SetActive(false);
-		anim = canvas.GetComponent<Animator>();
+		Canvas.SetActive(false);
+		_animator = Canvas.GetComponent<Animator>();
 	}
 
 	public IEnumerator Notify(string txt, float duration = 3f)
@@ -22,22 +23,22 @@ public class Notifier : MonoBehaviour
 			yield break;
 		}
 
-		textBox.text = txt.Replace("\\n", "\n");
-		canvas.SetActive(true);
-		anim.Play("Slide In");
+		TextBox.text = txt.Replace("\\n", "\n");
+		TextBox.SetActive(true);
+		_animator.Play("Slide In");
 
 		yield return new WaitForSeconds(duration);
 
-		anim.Play("Slide Out");
+		_animator.Play("Slide Out");
 	}
 
 	public void Clear()
 	{
-		canvas.SetActive(false);
+		Canvas.SetActive(false);
 	}
 
 	public void Close()
 	{
-		anim.Play("Slide Out");
+		_animator.Play("Slide Out");
 	}
 }

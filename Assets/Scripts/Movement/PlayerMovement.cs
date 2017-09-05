@@ -2,7 +2,7 @@
 
 public class PlayerMovement : CharacterMovement
 {
-	public GameObject front;
+	public GameObject Front;
 
 	private void Update()
 	{
@@ -14,7 +14,7 @@ public class PlayerMovement : CharacterMovement
 		Move(movementVector);
 
 		// Update eyes
-		/*if (movementVector != Vector2.zero && !frozen)
+		/*if (movementVector != Vector2.zero && !Frozen)
 		{
 			int angle;
 			if (Mathf.Abs(movementVector.x) > Mathf.Abs(movementVector.y))
@@ -26,7 +26,7 @@ public class PlayerMovement : CharacterMovement
 				angle = movementVector.y > 0 ? 180 : 0;
 			}
 
-			front.transform.rotation = Quaternion.Euler(0, 0, angle);
+			Front.transform.rotation = Quaternion.Euler(0, 0, angle);
 		}*/
 	}
 }

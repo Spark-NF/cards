@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class SaveSlot : MonoBehaviour
 {
-	public int slot;
-	public Button saveButton = null;
-	public Button loadButton = null;
-	public Button deleteButton = null;
+	public int Slot;
+	public Button SaveButton = null;
+	public Button LoadButton = null;
+	public Button DeleteButton = null;
 
 	void OnEnable()
 	{
@@ -17,37 +17,37 @@ public class SaveSlot : MonoBehaviour
 
 	void Start()
 	{
-		if (saveButton != null)
+		if (SaveButton != null)
 		{
-			saveButton.onClick.AddListener(() =>
+			SaveButton.onClick.AddListener(() =>
 			{
-				SaveManager.Save(slot);
+				SaveManager.Save(Slot);
 				UpdateStatus();
 			});
 		}
 
-		if (loadButton != null)
+		if (LoadButton != null)
 		{
-			loadButton.onClick.AddListener(() =>
+			LoadButton.onClick.AddListener(() =>
 			{
 				if (SceneManager.GetActiveScene().name != "World")
 				{
-					SaveManager.mustLoad = slot;
+					SaveManager.MustLoad = Slot;
 					SceneManager.LoadScene("World");
 				}
 				else
 				{
-					SaveManager.Load(slot);
+					SaveManager.Load(Slot);
 					UpdateStatus();
 				}
 			});
 		}
 
-		if (deleteButton != null)
+		if (DeleteButton != null)
 		{
-			deleteButton.onClick.AddListener(() =>
+			DeleteButton.onClick.AddListener(() =>
 			{
-				SaveManager.Delete(slot);
+				SaveManager.Delete(Slot);
 				UpdateStatus();
 			});
 		}
@@ -55,12 +55,12 @@ public class SaveSlot : MonoBehaviour
 
 	public void UpdateStatus()
 	{
-		bool enabled = SaveManager.HasSave(slot);
+		bool enabled = SaveManager.HasSave(Slot);
 
-		if (loadButton != null)
-			loadButton.interactable = enabled;
+		if (LoadButton != null)
+			LoadButton.interactable = enabled;
 
-		if (deleteButton != null)
-			loadButton.interactable = enabled;
+		if (DeleteButton != null)
+			LoadButton.interactable = enabled;
 	}
 }

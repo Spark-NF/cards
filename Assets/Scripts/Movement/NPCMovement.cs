@@ -2,16 +2,16 @@
 
 public class NPCMovement : CharacterMovement
 {
-	public bool canMove = true;
-	public float moveDuration = 2.0f;
-	public float waitDuration = 4.0f;
-	public float moveDistance = 2.0f;
-	public float randomizeDuration = 1.0f;
+	public bool CanMove = true;
+	public float MoveDuration = 2.0f;
+	public float WaitDuration = 4.0f;
+	public float MoveDistance = 2.0f;
+	public float RandomizeDuration = 1.0f;
 
-	private bool isMoving = true;
-	private float lastMove = 0f;
-	private float nextMove = 0f;
-	private Vector2 destination;
+	private bool _isMoving = true;
+	private float _lastMove = 0f;
+	private float _nextMove = 0f;
+	private Vector2 _destination;
 
 	public void LateUpdate()
 	{
@@ -22,31 +22,31 @@ public class NPCMovement : CharacterMovement
 
 	public void Update()
 	{
-		if (!canMove)
+		if (!CanMove)
 			return;
 
-		if (Time.time > lastMove + nextMove)
+		if (Time.time > _lastMove + _nextMove)
 		{
-			if (!isMoving)
+			if (!_isMoving)
 			{
 				bool x = Random.value > 0.5f;
-				float dist = (Random.value * 2f - 1f) * moveDistance;
+				float dist = (Random.value * 2f - 1f) * MoveDistance;
 
-				destination = new Vector2(x ? dist : 0, x ? 0 : dist);
+				_destination = new Vector2(x ? dist : 0, x ? 0 : dist);
 			}
 			else
 			{
 				Move(Vector2.zero);
 			}
 
-			lastMove = Time.time;
-			isMoving = !isMoving;
-			nextMove = (isMoving ? moveDuration : waitDuration) + (Random.value - 0.5f) * randomizeDuration;
+			_lastMove = Time.time;
+			_isMoving = !_isMoving;
+			_nextMove = (_isMoving ? MoveDuration : WaitDuration) + (Random.value - 0.5f) * RandomizeDuration;
 		}
 
-		if (isMoving)
+		if (_isMoving)
 		{
-			Move(destination);
+			Move(_destination);
 		}
 	}
 }

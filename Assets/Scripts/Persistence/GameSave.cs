@@ -4,6 +4,6 @@
 public class GameSave
 {
 	// Player
-	public float playerPositionX;
-	public float playerPositionY;
+	public float PlayerPositionX;
+	public float PlayerPositionY;
 }

@@ -5,8 +5,8 @@ using System.IO;
 
 public static class SaveManager
 {
-	public static int mustLoad = -1;
-	public static List<GameSave> savedGames = new List<GameSave>();
+	public static int MustLoad = -1;
+	public static List<GameSave> SavedGames = new List<GameSave>();
 
 	public static void Init()
 	{
@@ -15,48 +15,48 @@ public static class SaveManager
 
 	public static void SaveNew()
 	{
-		savedGames.Add(Game.current.Save());
+		SavedGames.Add(Game.Current.Save());
 		SaveAll();
 	}
 
 	public static void Save(int i)
 	{
-		while (i >= savedGames.Count)
+		while (i >= SavedGames.Count)
 		{
-			savedGames.Add(null);
+			SavedGames.Add(null);
 		}
-		savedGames[i] = Game.current.Save();
+		SavedGames[i] = Game.Current.Save();
 		SaveAll();
 	}
 
 	public static void Delete(int i)
 	{
-		if (i < savedGames.Count)
+		if (i < SavedGames.Count)
 		{
-			savedGames[i] = null;
+			SavedGames[i] = null;
 		}
 		SaveAll();
 	}
 
 	public static bool HasSave(int i)
 	{
-		return (i < savedGames.Count && savedGames[i] != null);
+		return (i < SavedGames.Count && SavedGames[i] != null);
 	}
 
 	public static void SaveAll()
 	{
 		BinaryFormatter bf = new BinaryFormatter();
-		FileStream file = File.Create(Application.persistentDataPath + "/savedGames.gd");
-		bf.Serialize(file, savedGames);
+		FileStream file = File.Create(Application.persistentDataPath + "/SavedGames.gd");
+		bf.Serialize(file, SavedGames);
 		file.Close();
 	}
 
 	public static bool Load(int i)
 	{
 		LoadAll();
-		if (i < savedGames.Count)
+		if (i < SavedGames.Count)
 		{
-			Game.current.Load(savedGames[i]);
+			Game.Current.Load(SavedGames[i]);
 			return true;
 		}
 		return false;
@@ -64,11 +64,11 @@ public static class SaveManager
 
 	public static void LoadAll()
 	{
-		if (File.Exists(Application.persistentDataPath + "/savedGames.gd"))
+		if (File.Exists(Application.persistentDataPath + "/SavedGames.gd"))
 		{
 			BinaryFormatter bf = new BinaryFormatter();
-			FileStream file = File.Open(Application.persistentDataPath + "/savedGames.gd", FileMode.Open);
-			savedGames = (List<GameSave>)bf.Deserialize(file);
+			FileStream file = File.Open(Application.persistentDataPath + "/SavedGames.gd", FileMode.Open);
+			SavedGames = (List<GameSave>)bf.Deserialize(file);
 			file.Close();
 		}
 	}

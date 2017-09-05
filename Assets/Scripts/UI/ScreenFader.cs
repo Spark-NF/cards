@@ -3,20 +3,21 @@ using System.Collections;
 
 public class ScreenFader : MonoBehaviour
 {
-	private Animator animator;
-	private bool isFading = false;
+	private Animator Animator;
+
+	private bool _isFading = false;
 
 	void Start()
 	{
-		animator = GetComponent<Animator>();
+		Animator = GetComponent<Animator>();
 	}
 
 	public IEnumerator FadeToClear()
 	{
-		isFading = true;
-		animator.SetTrigger("Fade In");
+		_isFading = true;
+		Animator.SetTrigger("Fade In");
 
-		while (isFading)
+		while (_isFading)
 		{
 			yield return null;
 		}
@@ -24,10 +25,10 @@ public class ScreenFader : MonoBehaviour
 
 	public IEnumerator FadeToBlack()
 	{
-		isFading = true;
-		animator.SetTrigger("Fade Out");
+		_isFading = true;
+		Animator.SetTrigger("Fade Out");
 
-		while (isFading)
+		while (_isFading)
 		{
 			yield return null;
 		}
@@ -35,6 +36,6 @@ public class ScreenFader : MonoBehaviour
 
 	public void AnimationComplete()
 	{
-		isFading = false;
+		_isFading = false;
 	}
 }
