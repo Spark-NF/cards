@@ -16,7 +16,7 @@ public class PauseMenu : MonoBehaviour
 	public Slider OptionsMusic;
 	public bool StopTime = true;
 
-	void Update()
+	private void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{

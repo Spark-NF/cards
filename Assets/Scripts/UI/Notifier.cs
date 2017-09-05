@@ -9,7 +9,7 @@ public class Notifier : MonoBehaviour
 
 	private Animator _animator;
 
-	void Start()
+	private void Start()
 	{
 		Canvas.SetActive(false);
 		_animator = Canvas.GetComponent<Animator>();

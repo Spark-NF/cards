@@ -6,12 +6,12 @@ public class CameraFollow : MonoBehaviour
 	public float lerp = 0.1f;
 	private float initZ;
 
-	void Start()
+	private void Start()
 	{
 		initZ = transform.position.z;
 	}
 
-	void Update()
+	private void Update()
 	{
 		if (!target)
 			return;

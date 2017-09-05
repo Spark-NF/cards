@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-class CardInstance
+public class CardInstance
 {
 	public Card Card;
 	public int Life;

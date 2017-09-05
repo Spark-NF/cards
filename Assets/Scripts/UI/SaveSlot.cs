@@ -10,12 +10,12 @@ public class SaveSlot : MonoBehaviour
 	public Button LoadButton = null;
 	public Button DeleteButton = null;
 
-	void OnEnable()
+	private void OnEnable()
 	{
 		UpdateStatus();
 	}
 
-	void Start()
+	private void Start()
 	{
 		if (SaveButton != null)
 		{

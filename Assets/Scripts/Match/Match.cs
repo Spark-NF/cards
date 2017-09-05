@@ -1,6 +1,6 @@
 using System;
 
-class Match
+public class Match
 {
 	private MatchSide[] _sides;
 	private int _currentSide;

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-class MatchSide
+public class MatchSide
 {
 	public Player Player;
 	public int MaxLife;

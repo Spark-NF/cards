@@ -3,17 +3,17 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-	void OnEnable()
+	private void OnEnable()
 	{
 		SceneManager.sceneLoaded += OnLevelFinishedLoading;
 	}
 
-	void OnDisable()
+	private void OnDisable()
 	{
 		SceneManager.sceneLoaded -= OnLevelFinishedLoading;
 	}
 
-	void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
+	private void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
 	{
 		Game.Current.Player = GameObject.FindWithTag("Player").GetComponent<GamePlayer>();
 
