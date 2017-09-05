@@ -8,8 +8,8 @@ public class PlayerMovement : CharacterMovement
 	{
 		// Move player according to input (keyboard and mobile)
 		Vector2 movementVector = new Vector2(
-			Input.GetAxisRaw("Horizontal"),
-			Input.GetAxisRaw("Vertical")
+			CnControls.CnInputManager.GetAxisRaw("Horizontal"),
+			CnControls.CnInputManager.GetAxisRaw("Vertical")
 		);
 		Move(movementVector);
 
