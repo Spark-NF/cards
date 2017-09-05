@@ -1,16 +1,26 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-	void OnLevelWasLoaded(int level)
+	void OnEnable()
 	{
-		//Game.current.player = GameObject.FindWithTag("Player");
+		SceneManager.sceneLoaded += OnLevelFinishedLoading;
+	}
 
-		if (SaveManager.mustLoad >= 0)
+	void OnDisable()
+	{
+		SceneManager.sceneLoaded -= OnLevelFinishedLoading;
+	}
+
+	void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
+	{
+		Game.Current.Player = GameObject.FindWithTag("Player").GetComponent<GamePlayer>();
+
+		if (SaveManager.MustLoad >= 0)
 		{
-			SaveManager.Load(SaveManager.mustLoad);
-			SaveManager.mustLoad = -1;
+			SaveManager.Load(SaveManager.MustLoad);
+			SaveManager.MustLoad = -1;
 		}
 	}
 }
