@@ -10,10 +10,12 @@ public class NPCMovement : CharacterMovement
 	public float MaxMoveDistance = 1.0f;
 
 	private bool _isMoving = false;
+	private bool _isTouchingPlayer = false;
 
 	private GameObject _player;
 	private SpriteRenderer _spriteRenderer;
 	private SpriteRenderer _playerSpriteRenderer;
+	private Coroutine _movement;
 
 	public new void Start()
 	{
@@ -24,19 +26,19 @@ public class NPCMovement : CharacterMovement
 		_playerSpriteRenderer = _player.GetComponent<SpriteRenderer>();
 	}
 
-	public void LateUpdate()
-	{
-		bool above = _player.transform.position.y > transform.position.y;
-		_spriteRenderer.sortingOrder = _playerSpriteRenderer.sortingOrder + (above ? 1 : -1);
-	}
-
 	public void Update()
 	{
 		if (!CanMove)
 			return;
 
-		if (!_isMoving)
-			StartCoroutine(WaitAndMove());
+		if (!_isMoving && !_isTouchingPlayer)
+			_movement = StartCoroutine(WaitAndMove());
+	}
+
+	public void LateUpdate()
+	{
+		bool above = _player.transform.position.y > transform.position.y;
+		_spriteRenderer.sortingOrder = _playerSpriteRenderer.sortingOrder + (above ? 1 : -1);
 	}
 
 	private IEnumerator WaitAndMove()
@@ -48,11 +50,7 @@ public class NPCMovement : CharacterMovement
 
 		// Randomize step direction
 		int dir = (int) (Random.value * 4); // [0 - 5]
-		var step = dir == 0 ? new Vector2(1, 0)
-			: dir == 1 ? new Vector2(-1, 0)
-			: dir == 2 ? new Vector2(0, 1)
-			: dir == 3 ? new Vector2(0, -1)
-			: new Vector2(0, 0);
+		var step = new Vector2(dir == 0 || dir == 2 ? dir - 1 : 0, dir == 1 || dir == 3 ? dir - 2 : 0);
 
 		// Randomize distance
 		float dist = Randomize(MinMoveDistance, MaxMoveDistance);
@@ -79,13 +77,32 @@ public class NPCMovement : CharacterMovement
 		return min + Random.value * (max - min);
 	}
 
-	private void OnTriggerEnter(Collider other)
+	private void OnTriggerEnter2D(Collider2D other)
 	{
 		// Stop moving if we are close to the player
 		if (other.CompareTag("Player"))
 		{
-			_isMoving = false;
-			Move(Vector2.zero);
+			StopMovement();
+			_isTouchingPlayer = true;
 		}
+	}
+
+	private void OnTriggerExit2D(Collider2D other)
+	{
+		if (other.CompareTag("Player"))
+		{
+			_isTouchingPlayer = false;
+		}
+	}
+
+	private void StopMovement()
+	{
+		if (!_isMoving || _movement == null)
+			return;
+
+		Move(Vector2.zero);
+		_isMoving = false;
+		StopCoroutine(_movement);
+		_movement = null;
 	}
 }
