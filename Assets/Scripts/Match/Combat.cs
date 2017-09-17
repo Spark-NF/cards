@@ -1,12 +1,12 @@
 using System;
 
-public class Match
+public class Combat
 {
 	private MatchSide[] _sides;
 	private int _currentSide;
 	private MatchStep _currentStep;
 
-	public Match(MatchSide[] sides)
+	public Combat(MatchSide[] sides)
 	{
 		_sides = sides;
 

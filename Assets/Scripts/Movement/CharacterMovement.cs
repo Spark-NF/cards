@@ -31,6 +31,7 @@ public abstract class CharacterMovement : MonoBehaviour
 	/// </summary>
 	public void Animate(Vector2 movementVector)
 	{
+		// TODO: is_walking should be unnecessary in the animator as <> input_x && y == 0
 		bool hasVector = movementVector != Vector2.zero;
 		_animator.SetBool("is_walking", hasVector);
 		if (!hasVector)

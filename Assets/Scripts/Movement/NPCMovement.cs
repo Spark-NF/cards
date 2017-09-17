@@ -49,8 +49,8 @@ public class NPCMovement : CharacterMovement
 		yield return new WaitForSeconds(Randomize(MinWaitDuration, MaxWaitDuration));
 
 		// Randomize step direction
-		int dir = (int) (Random.value * 4); // [0 - 5]
-		var step = new Vector2(dir == 0 || dir == 2 ? dir - 1 : 0, dir == 1 || dir == 3 ? dir - 2 : 0);
+		int dir = (int) (Random.value * 4); // [0 - 3]
+		var step = new Vector2(dir % 2 == 0 ? dir - 1 : 0, dir % 2 == 1 ? dir - 2 : 0);
 
 		// Randomize distance
 		float dist = Randomize(MinMoveDistance, MaxMoveDistance);

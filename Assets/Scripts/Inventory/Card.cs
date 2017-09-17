@@ -12,4 +12,5 @@ public class Card
 	public string Description;
 	public int Strength;
 	public int Life;
+	public CardRarity Rarity;
 }

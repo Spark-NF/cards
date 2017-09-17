@@ -16,6 +16,7 @@ public class CameraFollow : MonoBehaviour
 		if (!target)
 			return;
 
+		// FIXME: should not lerp on the last part of the movement to ensure target = transform (instead of infinitely /2)
 		Vector3 targetCamera = Vector3.Lerp(transform.position, target.position, lerp);
 		targetCamera.z = initZ;
 
