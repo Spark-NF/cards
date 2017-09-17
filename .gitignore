@@ -1,4 +1,5 @@
 *.lnk
+/.vscode/
 
 # Build directories
 /[Ll]ibrary/
