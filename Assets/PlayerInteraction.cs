@@ -1,6 +1,4 @@
 ﻿using Fungus;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
@@ -8,18 +6,18 @@ public class PlayerInteraction : MonoBehaviour
 	private Collider2D _currentCollider = null;
 	private Flowchart _currentInteractible = null;
 
-	void Update()
+	public void Update()
 	{
 		if (CnControls.CnInputManager.GetButtonDown("Action"))
 		{
 			if (_currentInteractible != null)
 			{
-				_currentInteractible.ExecuteBlock("Init");
+				_currentInteractible.SendFungusMessage("Start");
 			}
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D other)
+	public void OnTriggerEnter2D(Collider2D other)
 	{
 		var obj = other.gameObject;
 		if (obj == null)
@@ -33,7 +31,7 @@ public class PlayerInteraction : MonoBehaviour
 		_currentInteractible = flowchart;
 	}
 
-	void OnTriggerExit2D(Collider2D other)
+	public void OnTriggerExit2D(Collider2D other)
 	{
 		if (other == _currentCollider)
 		{

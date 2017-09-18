@@ -1797,18 +1797,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -0.0000038146973, y: 0.000022888184}
+  scrollPos: {x: 10.146954, y: 9.411951}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 1
+  zoom: 0.94000006
   scrollViewRect:
     serializedVersion: 2
     x: -343
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 391794537}
   selectedCommands: []
   variables: []
   description: 
@@ -1877,8 +1878,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 436
-    y: 382
+    x: 234.93616
+    y: 266.04254
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1886,9 +1887,22 @@ MonoBehaviour:
   itemId: 0
   blockName: Init
   description: 
-  eventHandler: {fileID: 0}
+  eventHandler: {fileID: 391794538}
   commandList:
   - {fileID: 391794535}
+--- !u!114 &391794538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 391794533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 391794537}
+  message: Start
 --- !u!1 &408937482
 GameObject:
   m_ObjectHideFlags: 0
@@ -7972,11 +7986,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -67.5, y: 98.5}
+  scrollPos: {x: -403.99997, y: -103.999985}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 400
-  zoom: 1
+  blockViewHeight: 361
+  zoom: 0.9999999
   scrollViewRect:
     serializedVersion: 2
     x: 0
@@ -7985,7 +7999,8 @@ MonoBehaviour:
     height: 0
   selectedBlocks:
   - {fileID: 1031248928}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 1031248926}
   variables: []
   description: 
   stepPause: 0
@@ -8106,8 +8121,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 715
-    y: 414
+    x: 720
+    y: 389
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -8152,8 +8167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 722
-    y: 325
+    x: 703
+    y: 318
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -8177,8 +8192,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 718
-    y: 238
+    x: 721
+    y: 262
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -8260,6 +8275,19 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   setSayDialog: {fileID: 0}
+--- !u!114 &1031248927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1031248914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 1031248928}
+  message: Start
 --- !u!114 &1031248928
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -8273,7 +8301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 458
+    x: 459
     y: 320
     width: 120
     height: 40
@@ -8282,7 +8310,7 @@ MonoBehaviour:
   itemId: 0
   blockName: Init
   description: 
-  eventHandler: {fileID: 0}
+  eventHandler: {fileID: 1031248927}
   commandList:
   - {fileID: 1031248926}
   - {fileID: 1031248925}
@@ -9513,7 +9541,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1212829383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 388.6719, y: 254.82236, z: 0}
+  m_LocalPosition: {x: 367.76672, y: 271.9171, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 105224049}
@@ -11361,7 +11389,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 0.89199996
+  orthographic size: 1.02875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -11487,7 +11515,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1488407380}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 388.6719, y: 299.82236, z: 0}
+  m_LocalPosition: {x: 367.76672, y: 316.9171, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 747461456}
@@ -11862,8 +11890,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1603721068}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 576, y: 446, z: 0}
-  m_LocalScale: {x: 1.4631473, y: 1.4631473, z: 1.4631473}
+  m_LocalPosition: {x: 476.5, y: 411.5, z: 0}
+  m_LocalScale: {x: 1.2782793, y: 1.2782793, z: 1.2782793}
   m_Children:
   - {fileID: 1449092187}
   - {fileID: 296459893}
@@ -14187,7 +14215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1031248915}
+  selectedFlowchart: {fileID: 391794534}
 --- !u!4 &1850554143
 Transform:
   m_ObjectHideFlags: 1
@@ -15771,7 +15799,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2108622598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 304.82236, z: 0}
+  m_LocalPosition: {x: 0, y: 321.9171, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1945699248}
