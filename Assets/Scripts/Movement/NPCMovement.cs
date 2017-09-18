@@ -8,6 +8,7 @@ public class NPCMovement : CharacterMovement
 	public float MaxWaitDuration = 2.0f;
 	public float MinMoveDistance = 0.2f;
 	public float MaxMoveDistance = 1.0f;
+	public Rect Bounds = new Rect(-1, -1, 2, 2);
 
 	private bool _isMoving = false;
 	private bool _isTouchingPlayer = false;
@@ -16,6 +17,7 @@ public class NPCMovement : CharacterMovement
 	private SpriteRenderer _spriteRenderer;
 	private SpriteRenderer _playerSpriteRenderer;
 	private Coroutine _movement;
+	private Vector2 _startPos;
 
 	public new void Start()
 	{
@@ -24,6 +26,7 @@ public class NPCMovement : CharacterMovement
 		_player = GameObject.FindWithTag("Player");
 		_spriteRenderer = GetComponent<SpriteRenderer>();
 		_playerSpriteRenderer = _player.GetComponent<SpriteRenderer>();
+		_startPos = transform.position;
 	}
 
 	public void Update()
@@ -39,6 +42,9 @@ public class NPCMovement : CharacterMovement
 	{
 		bool above = _player.transform.position.y > transform.position.y;
 		_spriteRenderer.sortingOrder = _playerSpriteRenderer.sortingOrder + (above ? 1 : -1);
+
+		// Debug.
+		DrawSquare(Color.yellow, _startPos + Bounds.position, Bounds.size);
 	}
 
 	private IEnumerator WaitAndMove()
@@ -60,7 +66,7 @@ public class NPCMovement : CharacterMovement
 
 		// Move for duration or until moving is set to false
 		float time = 0f;
-		while (_isMoving && time < moveDuration)
+		while (_isMoving && IsGoodDirection(step) && time < moveDuration)
 		{
 			time += Time.deltaTime;
 			Move(step);
@@ -70,6 +76,33 @@ public class NPCMovement : CharacterMovement
 		// Stop movement
 		Move(Vector2.zero);
 		_isMoving = false;
+	}
+
+	private bool IsGoodDirection(Vector2 step)
+	{
+		if (step.x > 0 && transform.position.x > _startPos.x + Bounds.x + Bounds.width)
+			return false;
+		if (step.x < 0 && transform.position.x < _startPos.x + Bounds.x)
+			return false;
+		if (step.y > 0 && transform.position.y > _startPos.y + Bounds.y + Bounds.height)
+			return false;
+		if (step.y < 0 && transform.position.y < _startPos.y + Bounds.y)
+			return false;
+		return true;
+	}
+
+	/// <summary>
+	///		Draws a debug square.
+	/// </summary>
+	/// <param name="color">The color to paint in.</param>
+	/// <param name="position">The top left corner of the square.</param>
+	/// <param name="size">The size of the square.</param>
+	private static void DrawSquare(Color color, Vector2 position, Vector2 size)
+	{
+		Debug.DrawLine(position, position + new Vector2(size.x, 0), color);
+		Debug.DrawLine(position + new Vector2(size.x, 0), position + size, color);
+		Debug.DrawLine(position + size, position + new Vector2(0, size.y), color);
+		Debug.DrawLine(position + new Vector2(0, size.y), position, color);
 	}
 
 	private float Randomize(float min, float max)
