@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
+	public CharacterMovement MovementController;
+
 	private List<GameObject> _interactibles = new List<GameObject>();
 
 	public void Update()
@@ -31,10 +33,23 @@ public class PlayerInteraction : MonoBehaviour
 				var flowchart = obj.GetComponent<Flowchart>();
 				if (flowchart != null)
 				{
+					MovementController.IsFrozen = true;
+					BlockSignals.OnBlockEnd += UnfreezePlayerWhenFlowchartEnds;
 					flowchart.SendFungusMessage("Start");
 					return;
 				}
 			}
+		}
+	}
+
+	private void UnfreezePlayerWhenFlowchartEnds(Block block)
+	{
+		var flowchart = block.GetFlowchart();
+		if (!flowchart.HasExecutingBlocks() && !MenuDialog.GetMenuDialog().IsActive())
+		{
+			MovementController.IsFrozen = false;
+			BlockSignals.OnBlockEnd -= UnfreezePlayerWhenFlowchartEnds;
+			flowchart.SendFungusMessage("End");
 		}
 	}
 

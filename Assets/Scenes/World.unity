@@ -1808,8 +1808,7 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 391794537}
+  selectedBlocks: []
   selectedCommands: []
   variables: []
   description: 
@@ -1892,7 +1891,7 @@ MonoBehaviour:
   - {fileID: 391794535}
 --- !u!114 &391794538
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 391794533}
@@ -7986,11 +7985,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -403.99997, y: -103.999985}
+  scrollPos: {x: -465.8042, y: -176.35489}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 361
-  zoom: 0.9999999
+  blockViewHeight: 362
+  zoom: 0.9399996
   scrollViewRect:
     serializedVersion: 2
     x: 0
@@ -7998,9 +7997,8 @@ MonoBehaviour:
     width: 0
     height: 0
   selectedBlocks:
-  - {fileID: 1031248928}
-  selectedCommands:
-  - {fileID: 1031248926}
+  - {fileID: 1031248922}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -8179,6 +8177,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 1031248917}
+  - {fileID: 1031248930}
 --- !u!114 &1031248923
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -8277,7 +8276,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1031248927
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1031248914}
@@ -8335,6 +8334,31 @@ MonoBehaviour:
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   description: 
+--- !u!114 &1031248930
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1031248914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 12
+  indentLevel: 0
+  storyText: "Amazin item! Here's 50\u20AC."
+  description: 
+  character: {fileID: 1031248929}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  setSayDialog: {fileID: 0}
 --- !u!1 &1052202753
 GameObject:
   m_ObjectHideFlags: 0
@@ -9541,7 +9565,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1212829383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 367.76672, y: 271.9171, z: 0}
+  m_LocalPosition: {x: 424.7297, y: 229.2453, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 105224049}
@@ -10600,6 +10624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 855feb9c16688f04689baf1bede37bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MovementController: {fileID: 1669499793}
 --- !u!4 &1280889246 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4724511593084848, guid: bdcd47dd971633c409ea2aa4306e1765,
@@ -11389,7 +11414,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 1.02875
+  orthographic size: 0.88374996
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -11515,7 +11540,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1488407380}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 367.76672, y: 316.9171, z: 0}
+  m_LocalPosition: {x: 424.7297, y: 274.2453, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 747461456}
@@ -11890,8 +11915,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1603721068}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 476.5, y: 411.5, z: 0}
-  m_LocalScale: {x: 1.2782793, y: 1.2782793, z: 1.2782793}
+  m_LocalPosition: {x: 544, y: 353.5, z: 0}
+  m_LocalScale: {x: 1.265912, y: 1.265912, z: 1.265912}
   m_Children:
   - {fileID: 1449092187}
   - {fileID: 296459893}
@@ -13397,6 +13422,12 @@ MonoBehaviour:
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   description: 
+--- !u!114 &1669499793 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114225547875530134, guid: 4ef1d79d8f52b104eacf0f38fd2845fb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1172864837}
+  m_Script: {fileID: 11500000, guid: 1827c2ff2c01a454a99b03188a76a0c0, type: 3}
 --- !u!1 &1676718398
 GameObject:
   m_ObjectHideFlags: 0
@@ -14215,7 +14246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 391794534}
+  selectedFlowchart: {fileID: 1031248915}
 --- !u!4 &1850554143
 Transform:
   m_ObjectHideFlags: 1
@@ -15799,7 +15830,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2108622598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 321.9171, z: 0}
+  m_LocalPosition: {x: 0, y: 279.2453, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1945699248}
