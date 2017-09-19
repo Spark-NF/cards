@@ -25,7 +25,7 @@ public class PlayerInteraction : MonoBehaviour
 			if (_interactibles.Count > 1)
 			{
 				_interactibles = _interactibles.OrderBy(
-					x => Vector2.Distance(transform.parent.position, x.transform.position)
+					x => Vector3.Distance(transform.parent.position, x.transform.position)
 				).ToList();
 			}
 
@@ -73,12 +73,12 @@ public class PlayerInteraction : MonoBehaviour
 		}
 	}
 
-	public void OnTriggerEnter2D(Collider2D other)
+	public void OnTriggerEnter(Collider other)
 	{
 		_interactibles.Add(other.gameObject);
 	}
 
-	public void OnTriggerExit2D(Collider2D other)
+	public void OnTriggerExit(Collider other)
 	{
 		_interactibles.Remove(other.gameObject);
 	}

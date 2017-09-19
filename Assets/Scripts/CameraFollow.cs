@@ -2,23 +2,17 @@
 
 public class CameraFollow : MonoBehaviour
 {
-	public Transform target;
-	public float lerp = 0.1f;
-	private float initZ;
-
-	private void Start()
-	{
-		initZ = transform.position.z;
-	}
+	public Transform Target;
+	public float Lerp = 0.1f;
 
 	private void Update()
 	{
-		if (!target)
+		if (!Target)
 			return;
 
 		// FIXME: should not lerp on the last part of the movement to ensure target = transform (instead of infinitely /2)
-		Vector3 targetCamera = Vector3.Lerp(transform.position, target.position, lerp);
-		targetCamera.z = initZ;
+		Vector3 targetPos = Target.position + new Vector3(0, 10, -4);
+		Vector3 targetCamera = Vector3.Lerp(transform.position, targetPos, Lerp);
 
 		transform.position = targetCamera;
 	}

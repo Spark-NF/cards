@@ -14,6 +14,7 @@ public class Game
 		// Player
 		gs.PlayerPositionX = Player.transform.position.x;
 		gs.PlayerPositionY = Player.transform.position.y;
+		gs.PlayerPositionZ = Player.transform.position.z;
 		gs.PlayerInventory = Player.Inventory;
 
 		return gs;
@@ -22,10 +23,10 @@ public class Game
 	public void Load(GameSave gs)
 	{
 		// Player
-		var playerPos = new Vector2(gs.PlayerPositionX, gs.PlayerPositionY);
+		var playerPos = new Vector3(gs.PlayerPositionX, gs.PlayerPositionY, gs.PlayerPositionZ);
 		Player.transform.position = playerPos;
 		Player.Inventory = gs.PlayerInventory;
-		Camera.main.transform.position = new Vector3(playerPos.x, playerPos.y, Camera.main.transform.position.z);
+		Camera.main.transform.position = playerPos + new Vector3(0, 10, -4);
 
 		// All available cards
 		CardManager = new CardManager();

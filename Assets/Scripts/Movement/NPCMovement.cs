@@ -13,19 +13,13 @@ public class NPCMovement : CharacterMovement
 	private bool _isMoving = false;
 	private bool _isTouchingPlayer = false;
 
-	private GameObject _player;
-	private SpriteRenderer _spriteRenderer;
-	private SpriteRenderer _playerSpriteRenderer;
 	private Coroutine _movement;
-	private Vector2 _startPos;
+	private Vector3 _startPos;
 
 	public new void Start()
 	{
 		base.Start();
 
-		_player = GameObject.FindWithTag("Player");
-		_spriteRenderer = GetComponent<SpriteRenderer>();
-		_playerSpriteRenderer = _player.GetComponent<SpriteRenderer>();
 		_startPos = transform.position;
 	}
 
@@ -40,11 +34,7 @@ public class NPCMovement : CharacterMovement
 
 	public void LateUpdate()
 	{
-		bool above = _player.transform.position.y > transform.position.y;
-		_spriteRenderer.sortingOrder = _playerSpriteRenderer.sortingOrder + (above ? 1 : -1);
-
-		// Debug.
-		DrawSquare(Color.yellow, _startPos + Bounds.position, Bounds.size);
+		DrawSquare(Color.yellow, _startPos.xz() + Bounds.position, Bounds.size);
 	}
 
 	private IEnumerator WaitAndMove()
@@ -56,7 +46,7 @@ public class NPCMovement : CharacterMovement
 
 		// Randomize step direction
 		int dir = (int) (Random.value * 4); // [0 - 3]
-		var step = new Vector2(dir % 2 == 0 ? dir - 1 : 0, dir % 2 == 1 ? dir - 2 : 0);
+		var step = new Vector3(dir % 2 == 0 ? dir - 1 : 0, 0, dir % 2 == 1 ? dir - 2 : 0);
 
 		// Randomize distance
 		float dist = Randomize(MinMoveDistance, MaxMoveDistance);
@@ -74,7 +64,7 @@ public class NPCMovement : CharacterMovement
 		}
 
 		// Stop movement
-		Move(Vector2.zero);
+		Move(Vector3.zero);
 		_isMoving = false;
 	}
 
@@ -110,7 +100,7 @@ public class NPCMovement : CharacterMovement
 		return min + Random.value * (max - min);
 	}
 
-	private void OnTriggerEnter2D(Collider2D other)
+	private void OnTriggerEnter(Collider other)
 	{
 		// Stop moving if we are close to the player
 		if (other.CompareTag("Player"))
@@ -120,7 +110,7 @@ public class NPCMovement : CharacterMovement
 		}
 	}
 
-	private void OnTriggerExit2D(Collider2D other)
+	private void OnTriggerExit(Collider other)
 	{
 		if (other.CompareTag("Player"))
 		{
@@ -133,7 +123,7 @@ public class NPCMovement : CharacterMovement
 		if (!_isMoving || _movement == null)
 			return;
 
-		Move(Vector2.zero);
+		Move(Vector3.zero);
 		_isMoving = false;
 		StopCoroutine(_movement);
 		_movement = null;
