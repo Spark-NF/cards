@@ -43,8 +43,8 @@ public class PlayerInteraction : MonoBehaviour
 						SayDialog.ActiveSayDialog = SmallSayDialog;
 
 						// Show small dialog above interactible
-						SmallSayDialogTransform.position = obj.transform.position + new Vector3(0, 0.16f, 0);
-						SmallSayDialogTransform.pivot = new Vector2(0.5f, -1);
+						SmallSayDialogTransform.position = obj.transform.position + new Vector3(0, 2f, 0);
+						SmallSayDialogTransform.pivot = new Vector2(0.5f, 0.5f);
 					}
 					else
 					{

@@ -2380,6 +2380,12 @@ Prefab:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: a8baddfec6c6d4346a9ee3b2bbcc2354, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &318608585 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114145524670364252, guid: a8baddfec6c6d4346a9ee3b2bbcc2354,
+    type: 2}
+  m_PrefabInternal: {fileID: 318608584}
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
 --- !u!1 &329553872
 GameObject:
   m_ObjectHideFlags: 0
@@ -6606,19 +6612,19 @@ RectTransform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 550721279}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: -5, z: 0}
-  m_LocalScale: {x: 0.0015, y: 0.0015, z: 0.0015}
+  m_LocalRotation: {x: 0.5735764, y: 0, z: 0, w: 0.8191521}
+  m_LocalPosition: {x: -5, y: -2, z: 0}
+  m_LocalScale: {x: 0.007, y: 0.007, z: 0.007}
   m_Children:
   - {fileID: 1397839054}
   m_Father: {fileID: 1287068174}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 70, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 3}
   m_SizeDelta: {x: 800, y: 80}
-  m_Pivot: {x: 0.5, y: -1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &550721281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12368,7 +12374,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1397839053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -400, y: 80, z: 0}
+  m_LocalPosition: {x: -400, y: -40, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 225604045}
@@ -14971,12 +14977,6 @@ MonoBehaviour:
   hideCommands: []
   luaEnvironment: {fileID: 0}
   luaBindingName: flowchart
---- !u!114 &1793385015 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114145524670364252, guid: a8baddfec6c6d4346a9ee3b2bbcc2354,
-    type: 2}
-  m_PrefabInternal: {fileID: 1793385011}
-  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
 --- !u!114 &1793385016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16013,7 +16013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1793385015}
+  selectedFlowchart: {fileID: 318608585}
 --- !u!4 &1850554143
 Transform:
   m_ObjectHideFlags: 1
