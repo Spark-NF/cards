@@ -2380,12 +2380,6 @@ Prefab:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: a8baddfec6c6d4346a9ee3b2bbcc2354, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &318608585 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114145524670364252, guid: a8baddfec6c6d4346a9ee3b2bbcc2354,
-    type: 2}
-  m_PrefabInternal: {fileID: 318608584}
-  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
 --- !u!1 &329553872
 GameObject:
   m_ObjectHideFlags: 0
@@ -9442,7 +9436,9 @@ Prefab:
       propertyPath: FullSizeSayDialog
       value: 
       objectReference: {fileID: 17641987}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 33230730115272932, guid: 4ef1d79d8f52b104eacf0f38fd2845fb, type: 2}
+    - {fileID: 23881012685684964, guid: 4ef1d79d8f52b104eacf0f38fd2845fb, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4ef1d79d8f52b104eacf0f38fd2845fb, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1052202753
@@ -14977,6 +14973,12 @@ MonoBehaviour:
   hideCommands: []
   luaEnvironment: {fileID: 0}
   luaBindingName: flowchart
+--- !u!114 &1793385015 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114145524670364252, guid: a8baddfec6c6d4346a9ee3b2bbcc2354,
+    type: 2}
+  m_PrefabInternal: {fileID: 1793385011}
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
 --- !u!114 &1793385016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16013,7 +16015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 318608585}
+  selectedFlowchart: {fileID: 1793385015}
 --- !u!4 &1850554143
 Transform:
   m_ObjectHideFlags: 1
