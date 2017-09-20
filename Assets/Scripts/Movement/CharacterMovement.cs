@@ -2,7 +2,8 @@
 
 public abstract class CharacterMovement : MonoBehaviour
 {
-	public float Speed = 1.0f;
+	public float Speed = 3.0f;
+	public float RotationSpeed = 5.0f;
 
 	private bool _frozen = false;
 	private Rigidbody _rigidbody;
@@ -28,6 +29,6 @@ public abstract class CharacterMovement : MonoBehaviour
 			return;
 
 		_rigidbody.transform.Translate(movementVector * Time.deltaTime * Speed, Space.World);
-		_rigidbody.transform.rotation = Quaternion.Lerp(_rigidbody.transform.rotation, Quaternion.LookRotation(movementVector), Time.fixedDeltaTime * 5.0f);
+		_rigidbody.transform.rotation = Quaternion.Lerp(_rigidbody.transform.rotation, Quaternion.LookRotation(movementVector), Time.fixedDeltaTime * RotationSpeed);
 	}
 }
