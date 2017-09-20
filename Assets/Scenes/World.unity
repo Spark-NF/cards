@@ -955,7 +955,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebc391d267b250498b9711d5ff923a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoneyCounter: {fileID: 0}
 --- !u!114 &101329511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2296,7 +2295,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1603721069}
         m_MethodName: Show
         m_Mode: 1
         m_Arguments:
@@ -3778,7 +3777,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1603721075}
         m_MethodName: Show
         m_Mode: 1
         m_Arguments:
@@ -4794,7 +4793,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1603721075}
         m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
@@ -5167,7 +5166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebc391d267b250498b9711d5ff923a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoneyCounter: {fileID: 0}
 --- !u!114 &845867969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7900,8 +7898,8 @@ RectTransform:
   - {fileID: 1446021374}
   - {fileID: 101329509}
   - {fileID: 845867967}
-  - {fileID: 1565215858}
   - {fileID: 1967666053}
+  - {fileID: 1565215858}
   - {fileID: 762202639}
   m_Father: {fileID: 1603721073}
   m_RootOrder: 1
@@ -8645,7 +8643,7 @@ RectTransform:
   m_Children:
   - {fileID: 36329473}
   m_Father: {fileID: 1369403023}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8691,7 +8689,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1603721075}
         m_MethodName: ShowCards
         m_Mode: 1
         m_Arguments:
@@ -8859,6 +8857,7 @@ GameObject:
   - component: {fileID: 1603721071}
   - component: {fileID: 1603721070}
   - component: {fileID: 1603721069}
+  - component: {fileID: 1603721075}
   - component: {fileID: 1603721074}
   m_Layer: 5
   m_Name: HUD
@@ -8980,6 +8979,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touchScreen: {fileID: 95115805}
+--- !u!114 &1603721075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1603721068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1651ba3ec9be7c040982959df7a65604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCanvas: {fileID: 1369403022}
+  BagPanel: {fileID: 101329508}
+  CardsPanel: {fileID: 845867966}
+  ExitInventoryButton: {fileID: 762202638}
+  StopTime: 1
 --- !u!1 &1654876785
 GameObject:
   m_ObjectHideFlags: 0
@@ -11121,7 +11136,7 @@ RectTransform:
   m_Children:
   - {fileID: 425644565}
   m_Father: {fileID: 1369403023}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11167,7 +11182,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1603721075}
         m_MethodName: ShowBag
         m_Mode: 1
         m_Arguments:
