@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-	public CharacterMovement MovementController;
 	public SayDialog SmallSayDialog;
 	public RectTransform SmallSayDialogTransform;
 	public SayDialog FullSizeSayDialog;
@@ -15,6 +14,12 @@ public class PlayerInteraction : MonoBehaviour
 	private List<GameObject> _interactibles = new List<GameObject>();
 	private GameObject _activeInteractible;
 	private Shader _oldShader;
+	private CharacterMovement _playerMovement;
+
+	public void Start()
+	{
+		_playerMovement = GameObject.FindWithTag("Player").GetComponent<CharacterMovement>();
+	}
 
 	public void Update()
 	{
@@ -42,7 +47,7 @@ public class PlayerInteraction : MonoBehaviour
 					SayDialog.ActiveSayDialog = FullSizeSayDialog;
 
 					// Freeze player
-					MovementController.IsFrozen = true;
+					_playerMovement.IsFrozen = true;
 					BlockSignals.OnBlockEnd += UnfreezePlayerWhenFlowchartEnds;
 				}
 
@@ -56,7 +61,7 @@ public class PlayerInteraction : MonoBehaviour
 		var flowchart = block.GetFlowchart();
 		if (!flowchart.HasExecutingBlocks() && !MenuDialog.GetMenuDialog().IsActive())
 		{
-			MovementController.IsFrozen = false;
+			_playerMovement.IsFrozen = false;
 			BlockSignals.OnBlockEnd -= UnfreezePlayerWhenFlowchartEnds;
 			flowchart.SendFungusMessage("End");
 		}
