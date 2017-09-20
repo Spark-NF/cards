@@ -2385,6 +2385,12 @@ Prefab:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: a8baddfec6c6d4346a9ee3b2bbcc2354, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &318608585 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114145524670364252, guid: a8baddfec6c6d4346a9ee3b2bbcc2354,
+    type: 2}
+  m_PrefabInternal: {fileID: 318608584}
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
 --- !u!1 &329553872
 GameObject:
   m_ObjectHideFlags: 0
@@ -12563,7 +12569,6 @@ GameObject:
   - component: {fileID: 1419905983}
   - component: {fileID: 1419905982}
   - component: {fileID: 1419905981}
-  - component: {fileID: 1419905985}
   - component: {fileID: 1419905986}
   m_Layer: 0
   m_Name: Main Camera
@@ -12636,28 +12641,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 70, y: 0, z: 0}
---- !u!114 &1419905985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1419905980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 820dff5ef6cfac54cafac9e301a77a6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxCameraHalfWidthEnabled: 0
-  maxCameraHalfHeightEnabled: 0
-  maxCameraHalfWidth: 3
-  maxCameraHalfHeight: 2
-  targetDimension: 1
-  targetCameraHalfWidth: 2
-  targetCameraHalfHeight: 1
-  pixelPerfect: 1
-  retroSnap: 0
-  assetsPixelsPerUnit: 100
-  showHUD: 0
 --- !u!114 &1419905986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14906,12 +14889,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1746235940766006, guid: a8baddfec6c6d4346a9ee3b2bbcc2354,
     type: 2}
   m_PrefabInternal: {fileID: 1793385011}
---- !u!114 &1793385015 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114145524670364252, guid: a8baddfec6c6d4346a9ee3b2bbcc2354,
-    type: 2}
-  m_PrefabInternal: {fileID: 1793385011}
-  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
 --- !u!114 &1793385016
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -15948,7 +15925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1793385015}
+  selectedFlowchart: {fileID: 318608585}
 --- !u!4 &1850554143
 Transform:
   m_ObjectHideFlags: 1
