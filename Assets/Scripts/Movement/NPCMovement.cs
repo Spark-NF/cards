@@ -34,7 +34,7 @@ public class NPCMovement : CharacterMovement
 
 	public void LateUpdate()
 	{
-		DrawSquare(Color.yellow, _startPos.xz() + Bounds.position, Bounds.size);
+		DrawSquare(Color.yellow, new Vector2(_startPos.x, _startPos.z) + Bounds.position, Bounds.size);
 	}
 
 	private IEnumerator WaitAndMove()
