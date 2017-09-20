@@ -2376,6 +2376,11 @@ Prefab:
       propertyPath: blockViewHeight
       value: 403
       objectReference: {fileID: 0}
+    - target: {fileID: 114337763431934476, guid: a8baddfec6c6d4346a9ee3b2bbcc2354,
+        type: 2}
+      propertyPath: FullDialogBox
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: a8baddfec6c6d4346a9ee3b2bbcc2354, type: 2}
@@ -7219,45 +7224,9 @@ GameObject:
   m_PrefabParentObject: {fileID: 1746235940766006, guid: a8baddfec6c6d4346a9ee3b2bbcc2354,
     type: 2}
   m_PrefabInternal: {fileID: 318608584}
---- !u!114 &642567159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 642567158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  scrollPos: {x: 0, y: 0}
-  variablesScrollPos: {x: 0, y: 0}
-  variablesExpanded: 1
-  blockViewHeight: 400
-  zoom: 1
-  scrollViewRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  selectedBlocks: []
-  selectedCommands: []
-  variables: []
-  description: 
-  stepPause: 0
-  colorCommands: 1
-  hideComponents: 1
-  saveSelection: 1
-  localizationId: 
-  showLineNumbers: 0
-  hideCommands: []
-  luaEnvironment: {fileID: 0}
-  luaBindingName: flowchart
 --- !u!114 &642567160
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 642567158}
@@ -7282,7 +7251,7 @@ MonoBehaviour:
   - {fileID: 642567161}
 --- !u!114 &642567161
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 642567158}
@@ -7313,7 +7282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
 --- !u!114 &642567163
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 642567158}
@@ -14913,7 +14882,7 @@ Prefab:
         type: 2}
       propertyPath: selectedBlocks.Array.data[0]
       value: 
-      objectReference: {fileID: 1793385019}
+      objectReference: {fileID: 1793385026}
     - target: {fileID: 114145524670364252, guid: a8baddfec6c6d4346a9ee3b2bbcc2354,
         type: 2}
       propertyPath: selectedCommands.Array.data[0]
@@ -14937,42 +14906,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1746235940766006, guid: a8baddfec6c6d4346a9ee3b2bbcc2354,
     type: 2}
   m_PrefabInternal: {fileID: 1793385011}
---- !u!114 &1793385014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1793385013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  scrollPos: {x: 0, y: 0}
-  variablesScrollPos: {x: 0, y: 0}
-  variablesExpanded: 1
-  blockViewHeight: 400
-  zoom: 1
-  scrollViewRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  selectedBlocks: []
-  selectedCommands: []
-  variables: []
-  description: 
-  stepPause: 0
-  colorCommands: 1
-  hideComponents: 1
-  saveSelection: 1
-  localizationId: 
-  showLineNumbers: 0
-  hideCommands: []
-  luaEnvironment: {fileID: 0}
-  luaBindingName: flowchart
 --- !u!114 &1793385015 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114145524670364252, guid: a8baddfec6c6d4346a9ee3b2bbcc2354,
@@ -14981,7 +14914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
 --- !u!114 &1793385016
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1793385013}
@@ -15009,7 +14942,7 @@ MonoBehaviour:
   - {fileID: 1793385023}
 --- !u!114 &1793385017
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1793385013}
@@ -15028,7 +14961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
 --- !u!114 &1793385019
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1793385013}
@@ -15053,7 +14986,7 @@ MonoBehaviour:
   - {fileID: 1793385020}
 --- !u!114 &1793385020
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1793385013}
@@ -15078,7 +15011,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1793385021
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1793385013}
@@ -15103,7 +15036,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1793385022
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1793385013}
@@ -15128,7 +15061,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1793385023
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1793385013}
@@ -15149,7 +15082,7 @@ MonoBehaviour:
   setMenuDialog: {fileID: 0}
 --- !u!114 &1793385024
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1793385013}
@@ -15170,7 +15103,7 @@ MonoBehaviour:
   setMenuDialog: {fileID: 0}
 --- !u!114 &1793385025
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1793385013}
@@ -15195,7 +15128,7 @@ MonoBehaviour:
   - {fileID: 1793385022}
 --- !u!114 &1793385026
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1793385013}
@@ -15220,7 +15153,7 @@ MonoBehaviour:
   - {fileID: 1793385021}
 --- !u!114 &1793385027
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1793385013}
@@ -15241,7 +15174,7 @@ MonoBehaviour:
   setMenuDialog: {fileID: 0}
 --- !u!114 &1793385028
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1793385013}

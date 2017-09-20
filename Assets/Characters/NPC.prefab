@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 23149252427370288}
   - component: {fileID: 54684341541932582}
   - component: {fileID: 114140849073385060}
+  - component: {fileID: 114337763431934476}
   - component: {fileID: 114332221374444664}
   - component: {fileID: 114145524670364252}
   m_Layer: 9
@@ -115,11 +116,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2
+  RotationSpeed: 5
   CanMove: 1
   MinWaitDuration: 0.2
   MaxWaitDuration: 2
   MinMoveDistance: 0.2
   MaxMoveDistance: 1
+  Bounds:
+    serializedVersion: 2
+    x: -1
+    y: -1
+    width: 2
+    height: 2
 --- !u!114 &114145524670364252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -174,6 +182,19 @@ MonoBehaviour:
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   description: 
+--- !u!114 &114337763431934476
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1746235940766006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec4f83e2f7736142a245e57edfe0ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FullDialogBox: 1
+  Flowchart: {fileID: 114145524670364252}
 --- !u!135 &135758849603678072
 SphereCollider:
   m_ObjectHideFlags: 1

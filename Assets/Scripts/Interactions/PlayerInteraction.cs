@@ -25,13 +25,11 @@ public class PlayerInteraction : MonoBehaviour
 		// Interact with the object in view when triggering the "Action" control
 		if (CnControls.CnInputManager.GetButtonDown("Action"))
 		{
-			// Interact using a Fungus Flowchart
-			var flowchart = _activeInteractible.GetComponent<Flowchart>();
-			if (flowchart != null)
+			// Interact using Fungus
+			var fungusInteractible = _activeInteractible.GetComponent<FungusInteractible>();
+			if (fungusInteractible != null)
 			{
-				bool basic = Random.value > 0.5f;
-
-				if (basic)
+				if (!fungusInteractible.FullDialogBox)
 				{
 					SayDialog.ActiveSayDialog = SmallSayDialog;
 
@@ -48,7 +46,7 @@ public class PlayerInteraction : MonoBehaviour
 					BlockSignals.OnBlockEnd += UnfreezePlayerWhenFlowchartEnds;
 				}
 
-				flowchart.SendFungusMessage("Start");
+				fungusInteractible.Flowchart.SendFungusMessage("Start");
 			}
 		}
 	}
@@ -92,15 +90,7 @@ public class PlayerInteraction : MonoBehaviour
 		}
 
 		// We try each object in front of us until we find an interactible one
-		foreach (var obj in _interactibles)
-		{
-			// Interact using a Fungus Flowchart
-			var flowchart = obj.GetComponent<Flowchart>();
-			if (flowchart != null)
-				return obj;
-		}
-
-		return null;
+		return _interactibles.FirstOrDefault(obj => obj.GetComponent<Interactible>() != null);
 	}
 
 	public void OnTriggerEnter(Collider other)
