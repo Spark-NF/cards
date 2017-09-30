@@ -221,6 +221,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224985281514829822}
+  - component: {fileID: 114195088298813152}
   m_Layer: 0
   m_Name: CardUI
   m_TagString: Untagged
@@ -396,6 +397,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.176, y: 0.256, z: 0.001}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114195088298813152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1827266396211376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec9956316248a9247adcc8a6e629b8e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Title: {fileID: 114884345111396272}
+  Cost: {fileID: 1722113372662280}
+  Image: {fileID: 114885517595037840}
+  Description: {fileID: 114479988921686986}
+  Damage: {fileID: 114363815898559148}
+  Life: {fileID: 114608654858382144}
 --- !u!114 &114363720433445700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -637,6 +655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Canvas: {fileID: 1682315455222824}
   Borders: {fileID: 1486815535627230}
+  CardView: {fileID: 114195088298813152}
 --- !u!114 &114971677716273474
 MonoBehaviour:
   m_ObjectHideFlags: 1

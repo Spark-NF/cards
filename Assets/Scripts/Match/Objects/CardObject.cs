@@ -5,6 +5,7 @@ public class CardObject : MonoBehaviour
 {
 	public GameObject Canvas;
 	public GameObject Borders;
+	public CardView CardView;
 	[NonSerialized] public Transform TargetTransform;
 	[NonSerialized] public CardSlot ParentCardSlot;
 	[NonSerialized] public float PositionDamp = 0.2f;
