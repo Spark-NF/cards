@@ -2,10 +2,21 @@
 
 public class Game
 {
-	public static Game Current = new Game();
+	public static Game Current;
 
 	public GamePlayer Player = null;
 	public CardManager CardManager = null;
+
+	public static Game CreateNew()
+	{
+		var game = new Game();
+
+		// Load cards
+		game.CardManager = new CardManager();
+		game.CardManager.LoadFromFile("Cards");
+
+		return game;
+	}
 
 	public GameSave Save()
 	{
@@ -27,8 +38,5 @@ public class Game
 		Player.transform.position = playerPos;
 		Player.Inventory = gs.PlayerInventory;
 		Camera.main.transform.position = playerPos + new Vector3(0, 10, -4);
-
-		// All available cards
-		CardManager = new CardManager();
 	}
 }

@@ -15,28 +15,27 @@ public class GameManager : MonoBehaviour
 
 	private void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
 	{
+		Game.Current = Game.CreateNew();
+
 		// FIXME: multi-scene loading and streaming, the player should be cross-scene and set on load/new game
 		Game.Current.Player = GameObject.FindWithTag("Player").GetComponent<GamePlayer>();
 
 		// Load test data
+		var cardManager = Game.Current.CardManager;
 		Game.Current.Player.Inventory.Money = 1000;
-		// TODO: Use card manager.
-		//var cardManager = new CardManager();
-		var cards = new CardList
+		Game.Current.Player.Inventory.Cards = new CardList
 		{
-			//cardManager.GetById(0),
-			new Card { Id = 0 },
-			new Card { Id = 1 },
-			new Card { Id = 1 },
-			new Card { Id = 2 },
-			new Card { Id = 3 },
-			new Card { Id = 4 },
-			new Card { Id = 5 },
-			new Card { Id = 5 }
+			cardManager.GetById(1),
+			cardManager.GetById(2),
+			cardManager.GetById(2),
+			cardManager.GetById(3),
+			cardManager.GetById(4),
+			cardManager.GetById(5),
+			cardManager.GetById(6),
+			cardManager.GetById(6)
 		};
-		Game.Current.Player.Inventory.Cards = cards;
 
-		// Should load data BEFORE level to prevent TPs
+		// TODO: Should load data BEFORE level to prevent TPs
 		if (SaveManager.MustLoad >= 0)
 		{
 			SaveManager.Load(SaveManager.MustLoad);

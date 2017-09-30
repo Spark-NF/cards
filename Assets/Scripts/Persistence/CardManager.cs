@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CardManager
 {
@@ -23,9 +24,29 @@ public class CardManager
 		_cumulativeTotal = sum;
 	}
 
+	public bool LoadFromFile(string path)
+	{
+		var jsonObj = Resources.Load(path) as TextAsset;
+		if (jsonObj == null)
+			return false;
+
+		var cards = JsonUtility.FromJson<CardDatabase>(jsonObj.text);
+		if (cards.Cards.Length == 0)
+			return false;
+
+		foreach (var card in cards.Cards)
+			_cards.Add(card.Id, card.ToCard());
+
+		return true;
+	}
+
 	public Card GetById(int id)
 	{
-		return _cards[id];
+		Card card;
+		if (!_cards.TryGetValue(id, out card))
+			return null;
+
+		return card;
 	}
 
 	private Card RandomCard(CardRarity rarity)
@@ -61,7 +82,7 @@ public class CardManager
 	{
 		if (rarities != null && rarities.Count > count)
 			throw new System.ArgumentException("rarities");
-		
+
 
 		// Generate weighted random card rarities
 		if (rarities == null)

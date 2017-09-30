@@ -1,0 +1,100 @@
+{
+	"Cards": [
+		{
+			"Id": 1,
+			"Price": ["White"],
+			"Attributes": [],
+			"Type": "Resource",
+			"Name": "White land",
+			"Image": "",
+			"Description": "",
+			"Strength": 0,
+			"Life": 0,
+			"Rarity": "Common"
+		},
+		{
+			"Id": 2,
+			"Price": ["Blue"],
+			"Attributes": [],
+			"Type": "Resource",
+			"Name": "Blue land",
+			"Image": "",
+			"Description": "",
+			"Strength": 0,
+			"Life": 0,
+			"Rarity": "Common"
+		},
+		{
+			"Id": 3,
+			"Price": ["Black"],
+			"Attributes": [],
+			"Type": "Resource",
+			"Name": "Black land",
+			"Image": "",
+			"Description": "",
+			"Strength": 0,
+			"Life": 0,
+			"Rarity": "Common"
+		},
+		{
+			"Id": 4,
+			"Price": ["Red"],
+			"Attributes": [],
+			"Type": "Resource",
+			"Name": "Red land",
+			"Image": "",
+			"Description": "",
+			"Strength": 0,
+			"Life": 0,
+			"Rarity": "Common"
+		},
+		{
+			"Id": 5,
+			"Price": ["Green"],
+			"Attributes": [],
+			"Type": "Resource",
+			"Name": "Green land",
+			"Image": "",
+			"Description": "",
+			"Strength": 0,
+			"Life": 0,
+			"Rarity": "Common"
+		},
+		{
+			"Id": 6,
+			"Price": ["Any"],
+			"Attributes": [],
+			"Type": "Unit",
+			"Name": "Basic unit",
+			"Image": "",
+			"Description": "Just some basic unit with no effects.",
+			"Strength": 1,
+			"Life": 1,
+			"Rarity": "Common"
+		},
+		{
+			"Id": 7,
+			"Price": ["Any", "Any"],
+			"Attributes": [],
+			"Type": "Unit",
+			"Name": "Better unit",
+			"Image": "",
+			"Description": "A little bit better unit.",
+			"Strength": 2,
+			"Life": 2,
+			"Rarity": "Common"
+		},
+		{
+			"Id": 8,
+			"Price": ["Any", "Any", "Red", "Red"],
+			"Attributes": [],
+			"Type": "Unit",
+			"Name": "Red unit",
+			"Image": "",
+			"Description": "A good red unit.",
+			"Strength": 5,
+			"Life": 3,
+			"Rarity": "Uncommon"
+		}
+	]
+}
