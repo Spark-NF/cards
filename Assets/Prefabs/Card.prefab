@@ -172,6 +172,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224889273935151300}
+  - component: {fileID: 114831967636917258}
   m_Layer: 0
   m_Name: Cost
   m_TagString: Untagged
@@ -252,8 +253,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1525627243044962}
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 0.1252, z: 0}
+  m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
+  m_LocalPosition: {x: 0, y: 0.33, z: -0.26}
   m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children:
   - {fileID: 4654047705219980}
@@ -261,7 +262,7 @@ Transform:
   - {fileID: 224716344491668872}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
 --- !u!4 &4654047705219980
 Transform:
   m_ObjectHideFlags: 1
@@ -409,7 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Title: {fileID: 114884345111396272}
-  Cost: {fileID: 1722113372662280}
+  CostView: {fileID: 114831967636917258}
   Image: {fileID: 114885517595037840}
   Description: {fileID: 114479988921686986}
   Damage: {fileID: 114363815898559148}
@@ -580,6 +581,24 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114831967636917258
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1722113372662280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87580aa2b264e734db1e3e1e87700796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CostPrefab: {fileID: 1269917850370322, guid: c86e01ea3316101478dacd596ab8815f, type: 2}
+  SpriteColorAny: {fileID: 21300000, guid: e0228883642bce3498bacf6dc1f06302, type: 3}
+  SpriteColorWhite: {fileID: 21300000, guid: ad9b84a20e4a38544a3992509578a1f4, type: 3}
+  SpriteColorBlue: {fileID: 21300000, guid: 226248ac6f184e448af731df91b91958, type: 3}
+  SpriteColorBlack: {fileID: 21300000, guid: b29ef1894836dc440b43ab036ca764cb, type: 3}
+  SpriteColorRed: {fileID: 21300000, guid: 88c4538700fa6ef43921107a986646b5, type: 3}
+  SpriteColorGreen: {fileID: 21300000, guid: c22400d5bd211479099238aaacbd4852, type: 3}
 --- !u!114 &114884345111396272
 MonoBehaviour:
   m_ObjectHideFlags: 1
