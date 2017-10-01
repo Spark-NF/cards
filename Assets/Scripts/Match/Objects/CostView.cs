@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,12 +37,17 @@ public class CostView : MonoBehaviour
 
 		// Spawn new cost objects
 		int i = 0;
+		int count = cost.Sum(c => c.Value);
+		float spacing = 15;
+		float width = 70;
+		float leftMost = (width + spacing) * (count - 1);
 		foreach (var pair in cost)
 		{
 			for (int c = 0; c < pair.Value; ++c)
 			{
 				var obj = CreateCostObject(pair.Key);
-				obj.GetComponent<RectTransform>().anchoredPosition = new Vector2(-50 * i++, 0);
+				float x = (width + spacing) * i++ - leftMost / 2f;
+				obj.GetComponent<RectTransform>().anchoredPosition = new Vector2(x, 0);
 				_costObjects.Add(obj);
 			}
 		}
