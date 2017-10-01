@@ -24,7 +24,7 @@ public abstract class CardSlot : MonoBehaviour
 		card.TargetTransform.position = transform.position;
 	}
 
-	public void RemoveCard(CardObject card)
+	public virtual void RemoveCard(CardObject card)
 	{
 		card.ParentCardSlot = null;
 		Cards.Remove(card);
