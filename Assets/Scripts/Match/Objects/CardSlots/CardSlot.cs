@@ -4,7 +4,7 @@ using System.Linq;
 
 public abstract class CardSlot : MonoBehaviour
 {
-	protected readonly List<CardObject> Cards = new List<CardObject>();
+	public readonly List<CardObject> Cards = new List<CardObject>();
 
 	public CardObject TopCard()
 	{

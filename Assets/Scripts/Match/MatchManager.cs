@@ -57,6 +57,12 @@ public class MatchManager : MonoBehaviour
 
 		// Pick card
 		yield return PlayerSideManager.PickCard(true, true);
+
+		// Allow to drag hand cards
+		foreach (CardObject card in PlayerSideManager.Hand.Cards)
+		{
+			card.GetComponent<CardDraggable>().enabled = true;
+		}
 	}
 
 	private static Player CreatePlayer(string name, CardManager cardManager)
