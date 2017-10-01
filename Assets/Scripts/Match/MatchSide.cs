@@ -63,40 +63,35 @@ public class MatchSide
 		return card;
 	}
 
-	public CardInstance PutResource(Card card)
+	public bool CanPutInRow(Card card, CardType row)
 	{
 		// Ensure we're not trying to put a card that we do not own
 		if (!Hand.Contains(card))
-			return null;
+			return false;
+
+		// You can only put cards in their row
+		if (card.Type != row)
+			return false;
 
 		// You can only put one resource per turn
-		if (_hasPutResource)
-			return null;
+		if (row == CardType.Resource && _hasPutResource)
+			return false;
 
-		// You can only put resources in the resources row
-		if (card.Type != CardType.Resource)
-			return null;
-
-		Hand.Remove(card);
-		var instance = new CardInstance(card, this);
-		Back.Add(instance);
-
-		return instance;
+		return true;
 	}
 
-	public CardInstance PutUnit(Card card)
+	public CardInstance PutInRow(Card card, CardType row)
 	{
-		// Ensure we're not trying to put a card that we do not own
-		if (!Hand.Contains(card))
-			return null;
-
-		// You can only put resources in the resources row
-		if (card.Type != CardType.Unit)
+		if (!CanPutInRow(card, row))
 			return null;
 
 		Hand.Remove(card);
 		var instance = new CardInstance(card, this);
-		Front.Add(instance);
+		var list = row == CardType.Resource ? Back : Front;
+		list.Add(instance);
+
+		if (row == CardType.Resource)
+			_hasPutResource = true;
 
 		return instance;
 	}

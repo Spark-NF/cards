@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class MatchManager : MonoBehaviour
 {
+	public static Combat CurrentMatch;
+
 	public SideManager PlayerSideManager;
 	public SideManager FoeSideManager;
 	public TurnNotifier Notifier;
 
-	private Combat _combat;
 	private MatchSide _sidePlayer;
 	private MatchSide _sideFoe;
 
@@ -22,7 +23,7 @@ public class MatchManager : MonoBehaviour
 
 		PlayerSideManager.MatchSide = new MatchSide(player, player.Decks[0], 20);
 		FoeSideManager.MatchSide = new MatchSide(foe, foe.Decks[0], 20);
-		_combat = new Combat(new []
+		CurrentMatch = new Combat(new []
 		{
 			PlayerSideManager.MatchSide,
 			FoeSideManager.MatchSide

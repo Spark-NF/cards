@@ -3,6 +3,8 @@ using System;
 public class Combat
 {
 	public MatchSide[] _sides;
+	public MatchSide CurrentSide { get { return _sides[_currentSide]; } }
+
 	private int _currentSide;
 	private MatchStep _currentStep;
 

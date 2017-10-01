@@ -19,9 +19,4 @@ public class DropArea : MonoBehaviour
 	{
 		ImageOver.color = _oldColor;
 	}
-
-	public bool CanDrop(CardObject card)
-	{
-		return CardType == CardType.Any || card.Card.Type == CardType;
-	}
 }

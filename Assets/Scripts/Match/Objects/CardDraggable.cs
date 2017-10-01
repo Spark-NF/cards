@@ -92,7 +92,10 @@ public class CardDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 			oldArea.OnExit();
 
 		if (newArea != null)
-			newArea.OnEnter(newArea.CanDrop(_cardObject));
+		{
+			bool canDrop = MatchManager.CurrentMatch.CurrentSide.CanPutInRow(_cardObject.Card, newArea.CardType);
+			newArea.OnEnter(canDrop);
+		}
 
 		DropArea = newArea;
 	}
@@ -105,20 +108,21 @@ public class CardDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 		_dragging = false;
 		_cardObject.PositionDamp = _oldPositionDamp;
 
-		if (DropArea != null && DropArea.CanDrop(_cardObject))
-		{
-			DropArea.CardSlot.AddCard(_cardObject);
-			_cardObject.TargetTransform.rotation = Quaternion.Euler(90, 0, 0);
-		}
-		else
-		{
-			_cardObject.TargetTransform.position = _startPosition;
-		}
-
 		if (DropArea != null)
 		{
+			var dropArea = DropArea;
 			DropArea.OnExit();
 			DropArea = null;
+
+			var cardInstance = MatchManager.CurrentMatch.CurrentSide.PutInRow(_cardObject.Card, dropArea.CardType);
+			if (cardInstance != null)
+			{
+				dropArea.CardSlot.AddCard(_cardObject);
+				_cardObject.TargetTransform.rotation = Quaternion.Euler(90, 0, 0);
+				return;
+			}
 		}
+
+		_cardObject.TargetTransform.position = _startPosition;
 	}
 }
