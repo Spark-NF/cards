@@ -484,6 +484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardSlot: {fileID: 114628727341971568}
   ImageOver: {fileID: 114832653706370842}
+  CardType: 0
 --- !u!114 &114044839079690250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -599,6 +600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardSlot: {fileID: 114474658291663298}
   ImageOver: {fileID: 114922216322813920}
+  CardType: 2
 --- !u!114 &114474658291663298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -689,6 +691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardSlot: {fileID: 114537542436489068}
   ImageOver: {fileID: 114936887653434668}
+  CardType: 1
 --- !u!114 &114828515601122050
 MonoBehaviour:
   m_ObjectHideFlags: 1

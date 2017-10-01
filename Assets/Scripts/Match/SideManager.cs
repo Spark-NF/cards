@@ -53,14 +53,14 @@ public class SideManager : MonoBehaviour
 
 		// Update card view to match card info
 		UpdatePickCountText();
-		var card = Dealer.StackCardSlot.TopCard();
-		card.CardView.SetCard(cardInfo);
+		var cardObject = Dealer.StackCardSlot.TopCard();
+		cardObject.Card = cardInfo;
 
 		if (show)
 		{
 			// Show the card to the player
-			card.TargetTransform.position = Camera.main.transform.position - new Vector3(0, 0.07f, -0.04f);
-			card.TargetTransform.rotation = Camera.main.transform.rotation;
+			cardObject.TargetTransform.position = Camera.main.transform.position - new Vector3(0, 0.07f, -0.04f);
+			cardObject.TargetTransform.rotation = Camera.main.transform.rotation;
 
 			// Wait for user interacton or a given amount of time
 			if (waitForClick)
@@ -71,7 +71,7 @@ public class SideManager : MonoBehaviour
 		}
 
 		// Move card to hand
-		Hand.CardSlot.AddCard(card);
-		card.TargetTransform.rotation = Quaternion.Euler(90, 0, 0);
+		Hand.CardSlot.AddCard(cardObject);
+		cardObject.TargetTransform.rotation = Quaternion.Euler(90, 0, 0);
 	}
 }

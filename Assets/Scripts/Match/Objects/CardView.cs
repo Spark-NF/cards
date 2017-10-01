@@ -10,7 +10,6 @@ public class CardView : MonoBehaviour
 	public Text Damage;
 	public Text Life;
 
-
 	public void SetCard(Card card)
 	{
 		Title.text = card.Name;

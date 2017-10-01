@@ -11,6 +11,17 @@ public class CardObject : MonoBehaviour
 	[NonSerialized] public float PositionDamp = 0.2f;
 	[NonSerialized] public float RotationDamp = 0.2f;
 
+	private Card _card;
+	public Card Card
+	{
+		get { return _card; }
+		set
+		{
+			_card = value;
+			CardView.SetCard(value);
+		}
+	}
+
 	private Vector3 _smoothVelocity;
 	private Vector4 _smoothRotationVelocity;
 
