@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class CardDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
 	public float DraggingHeight = 0.05f;
+	[NonSerialized] public DropArea DropArea;
 
 	private CardObject _cardObject;
 	private bool _dragging = false;
@@ -49,6 +51,7 @@ public class CardDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 			return;
 
 		_dragging = true;
+		DropArea = null;
 		_startPosition = transform.position;
 		_oldPositionDamp = _cardObject.PositionDamp;
 		_cardObject.PositionDamp = 0.1f;
@@ -61,10 +64,37 @@ public class CardDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 		if (!enabled)
 			return;
 
+		// Move card to mouse
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		float distance;
 		if (_dragPlane.Raycast(ray, out distance))
 			_cardObject.TargetTransform.position = ray.GetPoint(distance);
+
+		// Drop area management
+		int layerMask = LayerMask.GetMask("DropArea");
+		RaycastHit hit;
+		DropArea area = null;
+		if (Physics.Raycast(ray, out hit, 10, layerMask))
+		{
+			area = hit.transform.gameObject.GetComponent<DropArea>();
+		}
+		SetDropArea(area);
+	}
+
+	private void SetDropArea(DropArea newArea)
+	{
+		DropArea oldArea = DropArea;
+
+		if (newArea == oldArea)
+			return;
+
+		if (oldArea != null)
+			oldArea.OnExit();
+
+		if (newArea != null)
+			newArea.OnEnter();
+
+		DropArea = newArea;
 	}
 
 	public void OnEndDrag(PointerEventData eventData)
@@ -73,7 +103,19 @@ public class CardDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 			return;
 
 		_dragging = false;
-		_cardObject.TargetTransform.position = _startPosition;
 		_cardObject.PositionDamp = _oldPositionDamp;
+
+		if (DropArea != null)
+		{
+			DropArea.CardSlot.AddCard(_cardObject);
+			_cardObject.TargetTransform.rotation = Quaternion.Euler(90, 0, 0);
+
+			DropArea.OnExit();
+			DropArea = null;
+		}
+		else
+		{
+			_cardObject.TargetTransform.position = _startPosition;
+		}
 	}
 }

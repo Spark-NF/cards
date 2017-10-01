@@ -3,18 +3,19 @@ using UnityEngine.UI;
 
 public class DropArea : MonoBehaviour
 {
-	public float Width = 0.5f;
-	public float Height = 0.2f;
+	public CardSlot CardSlot;
 	public Image ImageOver;
 
-	private void Awake()
+	private Color _oldColor;
+
+	public void OnEnter()
 	{
-		enabled = false;
+		_oldColor = ImageOver.color;
+		ImageOver.color = Color.blue;
 	}
 
-	private void OnDrawGizmosSelected()
+	public void OnExit()
 	{
-		Gizmos.color = Color.green;
-		Extensions.GizmosDrawRect(transform.position, Width, Height);
+		ImageOver.color = _oldColor;
 	}
 }

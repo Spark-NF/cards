@@ -40,7 +40,7 @@ public class MatchManager : MonoBehaviour
 			yield return null;
 
 		// Hand pick after a small delay
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(1);
 
 		// Pick both hands
 		var playerPickHand = PlayerSideManager.PickHand(true, 5);

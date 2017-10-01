@@ -9,39 +9,16 @@ public class SideManager : MonoBehaviour
 	public Text RemainingPickCountText;
 	[NonSerialized] public MatchSide MatchSide;
 
-	public GameObject Units;
-	private CardSlot _unitsCardSlot;
-	private DropArea _unitsDropArea;
-
-	public GameObject Resources;
-	private CardSlot _resourcesCardSlot;
-	private DropArea _resourcesDropArea;
-
-	public GameObject Hand;
-	private CardSlot _handCardSlot;
-	private DropArea _handDropArea;
-
-	private void Awake()
-	{
-		_unitsCardSlot = Units.GetComponent<CardSlot>();
-		_unitsDropArea = Units.GetComponent<DropArea>();
-
-		_resourcesCardSlot = Resources.GetComponent<CardSlot>();
-		_resourcesDropArea = Resources.GetComponent<DropArea>();
-
-		_handCardSlot = Hand.GetComponent<CardSlot>();
-		_handDropArea = Hand.GetComponent<DropArea>();
-	}
+	public CardArea Units;
+	public CardArea Resources;
+	public CardArea Hand;
 
 	public void AllowDragDrop()
 	{
-		_unitsDropArea.enabled = true;
-		_resourcesDropArea.enabled = true;
+		Units.ToggleDrop(true);
+		Resources.ToggleDrop(true);
 
-		foreach (CardObject card in _handCardSlot.Cards)
-		{
-			card.GetComponent<CardDraggable>().enabled = true;
-		}
+		Hand.ToggleDrag(true);
 	}
 
 	public IEnumerator DropCards()
@@ -94,7 +71,7 @@ public class SideManager : MonoBehaviour
 		}
 
 		// Move card to hand
-		_handCardSlot.AddCard(card);
+		Hand.CardSlot.AddCard(card);
 		card.TargetTransform.rotation = Quaternion.Euler(90, 0, 0);
 	}
 }
