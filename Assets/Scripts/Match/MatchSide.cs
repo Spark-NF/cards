@@ -53,9 +53,11 @@ public class MatchSide
 		// No-op
 	}
 
-	public void PickCard()
+	public Card PickCard()
 	{
-		Hand.Add(Pick.Pop());
+		Card card = Pick.Pop();
+		Hand.Add(card);
+		return card;
 	}
 
 	public void PutCard(Card card)

@@ -24,10 +24,10 @@ public class MatchManager : MonoBehaviour
 		_sideFoe = new MatchSide(foe, foe.Decks[0], 20);
 		_combat = new Combat(new [] { _sidePlayer, _sideFoe });
 
-		StartCoroutine(DropCards());
+		StartCoroutine(StartGame());
 	}
 
-	private IEnumerator DropCards()
+	private IEnumerator StartGame()
 	{
 		// Drop both decks
 		var playerDrop = DealerPlayer.DropCards(_sidePlayer.Pick.Count);
@@ -53,7 +53,7 @@ public class MatchManager : MonoBehaviour
 			yield break;
 
 		// Link card object to actual match card
-		Card cardInfo = _sidePlayer.Pick.Pop();
+		Card cardInfo = _sidePlayer.PickCard();
 		card.CardView.SetCard(cardInfo);
 
 		// Show the card to the player
@@ -66,7 +66,6 @@ public class MatchManager : MonoBehaviour
 				yield return null;
 		else if (waitForSeconds > 0.001f)
 			yield return new WaitForSeconds(waitForSeconds);
-
 
 		// Move card to hand
 		PlayerHand.AddCard(card);
