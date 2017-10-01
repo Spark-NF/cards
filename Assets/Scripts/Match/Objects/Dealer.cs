@@ -7,9 +7,9 @@ public class Dealer : MonoBehaviour
 	public CardSlot StackCardSlot;
 	public float CardStackDelay = .01f;
 
-	private void Start()
+	public IEnumerator DropCards(int count)
 	{
-		StartCoroutine(StackCardOnSlot(20, StackCardSlot));
+		return StackCardOnSlot(count, StackCardSlot);
 	}
 
 	private IEnumerator StackCardOnSlot(int count, CardSlot cardSlot)

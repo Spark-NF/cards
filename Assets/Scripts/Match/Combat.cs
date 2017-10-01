@@ -2,7 +2,7 @@ using System;
 
 public class Combat
 {
-	private MatchSide[] _sides;
+	public MatchSide[] _sides;
 	private int _currentSide;
 	private MatchStep _currentStep;
 
