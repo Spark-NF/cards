@@ -12,20 +12,25 @@ public class TurnNotifier : MonoBehaviour
 	private void Awake()
 	{
 		_animator = AnimationObject.GetComponent<Animator>();
-		_animator.speed = 0.5f;
-
 		AnimationObject.SetActive(false);
 	}
 
-	public IEnumerator Notify(string message)
+	public IEnumerator Notify(string message, float duration = 1f)
 	{
 		Text.text = message;
 		AnimationObject.SetActive(true);
 
-		_animator.Play("New Turn");
-		var info = _animator.GetCurrentAnimatorStateInfo(0);
-		yield return new WaitForSeconds(info.normalizedTime + info.length / _animator.speed);
+		_animator.Play("Slide In");
+		yield return new WaitForSeconds(duration + GetAnimatorDuration(_animator));
+		_animator.Play("Slide Out");
+		yield return new WaitForSeconds(GetAnimatorDuration(_animator));
 
 		AnimationObject.SetActive(false);
+	}
+
+	private float GetAnimatorDuration(Animator animator)
+	{
+		var info = animator.GetCurrentAnimatorStateInfo(0);
+		return info.length / _animator.speed;
 	}
 }

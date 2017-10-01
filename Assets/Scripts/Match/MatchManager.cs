@@ -40,7 +40,14 @@ public class MatchManager : MonoBehaviour
 		yield return new WaitForSeconds(2);
 		yield return PickHand(5);
 
-		// New turn
+		while (true)
+		{
+			yield return NewTurn();
+		}
+	}
+
+	private IEnumerator NewTurn()
+	{
 		yield return Notifier.Notify("New turn");
 
 		// Pick card
