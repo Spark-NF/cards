@@ -7,6 +7,7 @@ public class MatchManager : MonoBehaviour
 	public Dealer DealerPlayer;
 	public Dealer DealerFoe;
 	public CardSlot PlayerHand;
+	public TurnNotifier Notifier;
 
 	private Combat _combat;
 	private MatchSide _sidePlayer;
@@ -38,6 +39,12 @@ public class MatchManager : MonoBehaviour
 		// Hand pick after a small delay
 		yield return new WaitForSeconds(2);
 		yield return PickHand(5);
+
+		// New turn
+		yield return Notifier.Notify("New turn");
+
+		// Pick card
+		yield return PickCardAsync();
 	}
 
 	private IEnumerator PickHand(int count)
