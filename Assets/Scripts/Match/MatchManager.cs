@@ -40,10 +40,7 @@ public class MatchManager : MonoBehaviour
 		yield return new WaitForSeconds(2);
 		yield return PickHand(5);
 
-		while (true)
-		{
-			yield return NewTurn();
-		}
+		yield return NewTurn();
 	}
 
 	private IEnumerator NewTurn()
@@ -62,12 +59,13 @@ public class MatchManager : MonoBehaviour
 
 	private IEnumerator PickCardAsync(float waitForSeconds = -1f)
 	{
-		var card = DealerPlayer.StackCardSlot.TopCard();
-		if (card == null)
+		// Try to pick a card
+		Card cardInfo = _sidePlayer.PickCard();
+		if (cardInfo == null)
 			yield break;
 
-		// Link card object to actual match card
-		Card cardInfo = _sidePlayer.PickCard();
+		// Update card view to match card info
+		var card = DealerPlayer.StackCardSlot.TopCard();
 		card.CardView.SetCard(cardInfo);
 
 		// Show the card to the player

@@ -55,27 +55,50 @@ public class MatchSide
 
 	public Card PickCard()
 	{
+		if (Pick.Count == 0)
+			return null;
+
 		Card card = Pick.Pop();
 		Hand.Add(card);
 		return card;
 	}
 
-	public void PutCard(Card card)
+	public CardInstance PutResource(Card card)
 	{
 		// Ensure we're not trying to put a card that we do not own
 		if (!Hand.Contains(card))
-			return;
-
-		Hand.Remove(card);
+			return null;
 
 		// You can only put one resource per turn
-		if (card.Type == CardType.Resource && _hasPutResource)
-			return;
+		if (_hasPutResource)
+			return null;
 
-		var cardInstance = new CardInstance(card, this);
-		var row = card.Type == CardType.Resource ? Back : Front;
+		// You can only put resources in the resources row
+		if (card.Type != CardType.Resource)
+			return null;
 
-		row.Add(cardInstance);
+		Hand.Remove(card);
+		var instance = new CardInstance(card, this);
+		Back.Add(instance);
+
+		return instance;
+	}
+
+	public CardInstance PutUnit(Card card)
+	{
+		// Ensure we're not trying to put a card that we do not own
+		if (!Hand.Contains(card))
+			return null;
+
+		// You can only put resources in the resources row
+		if (card.Type != CardType.Unit)
+			return null;
+
+		Hand.Remove(card);
+		var instance = new CardInstance(card, this);
+		Front.Add(instance);
+
+		return instance;
 	}
 
 	public void RemoveCardInstance(CardInstance cardInstance)
