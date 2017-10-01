@@ -3,6 +3,7 @@
 public class CardListSlot : CardSlot
 {
 	public float Spacing = 0.05f;
+	public float MaxWidth = 0.8f;
 
 	public override void AddCard(CardObject card)
 	{
@@ -26,5 +27,11 @@ public class CardListSlot : CardSlot
 		float totalWidth = (count - 1) * (width + spacing);
 		float x = index * (width + spacing) - totalWidth / 2f;
 		return transform.position + new Vector3(x, 0, 0);
+	}
+
+	private void OnDrawGizmosSelected()
+	{
+		Gizmos.color = Color.yellow;
+		Extensions.GizmosDrawRect(transform.position, MaxWidth, 0.088f);
 	}
 }

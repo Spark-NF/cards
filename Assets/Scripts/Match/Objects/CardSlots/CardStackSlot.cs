@@ -13,4 +13,11 @@ public class CardStackSlot : CardSlot
 		float cardHeight = card.GetComponent<BoxCollider>().size.z;
 		card.TargetTransform.Translate(new Vector3(0, 0, Cards.Count * cardHeight), Space.Self);
 	}
+
+	private void OnDrawGizmosSelected()
+	{
+		const float height = 0.04f;
+		Gizmos.color = Color.yellow;
+		Gizmos.DrawWireCube(transform.position + (height / 2f) * Vector3.up, new Vector3(0.063f, height, 0.088f));
+	}
 }
