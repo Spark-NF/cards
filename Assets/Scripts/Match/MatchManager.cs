@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class MatchManager : MonoBehaviour
 {
-	public Dealer DealerPlayer;
-	public Dealer DealerFoe;
-	public CardSlot PlayerHand;
+	public SideManager PlayerSideManager;
+	public SideManager FoeSideManager;
 	public TurnNotifier Notifier;
 
 	private Combat _combat;
@@ -21,9 +20,13 @@ public class MatchManager : MonoBehaviour
 		var player = CreatePlayer("Player", cardManager);
 		var foe = CreatePlayer("Foe", cardManager);
 
-		_sidePlayer = new MatchSide(player, player.Decks[0], 20);
-		_sideFoe = new MatchSide(foe, foe.Decks[0], 20);
-		_combat = new Combat(new [] { _sidePlayer, _sideFoe });
+		PlayerSideManager.MatchSide = new MatchSide(player, player.Decks[0], 20);
+		FoeSideManager.MatchSide = new MatchSide(foe, foe.Decks[0], 20);
+		_combat = new Combat(new []
+		{
+			PlayerSideManager.MatchSide,
+			FoeSideManager.MatchSide
+		});
 
 		StartCoroutine(StartGame());
 	}
@@ -31,15 +34,20 @@ public class MatchManager : MonoBehaviour
 	private IEnumerator StartGame()
 	{
 		// Drop both decks
-		var playerDrop = DealerPlayer.DropCards(_sidePlayer.Pick.Count);
-		var foeDrop = DealerFoe.DropCards(_sideFoe.Pick.Count);
+		var playerDrop = PlayerSideManager.DropCards();
+		var foeDrop = FoeSideManager.DropCards();
 		while (playerDrop.MoveNext() || foeDrop.MoveNext())
 			yield return null;
 
 		// Hand pick after a small delay
 		yield return new WaitForSeconds(2);
-		yield return PickHand(5);
 
+		// Pick both hands
+		var playerPickHand = PlayerSideManager.PickHand(true, 5);
+		StartCoroutine(FoeSideManager.PickHand(false, 5));
+		yield return playerPickHand;
+
+		// Start first turn
 		yield return NewTurn();
 	}
 
@@ -48,40 +56,7 @@ public class MatchManager : MonoBehaviour
 		yield return Notifier.Notify("New turn");
 
 		// Pick card
-		yield return PickCardAsync();
-	}
-
-	private IEnumerator PickHand(int count)
-	{
-		for (int i = 0; i < count; ++i)
-			yield return PickCardAsync(1);
-	}
-
-	private IEnumerator PickCardAsync(float waitForSeconds = -1f)
-	{
-		// Try to pick a card
-		Card cardInfo = _sidePlayer.PickCard();
-		if (cardInfo == null)
-			yield break;
-
-		// Update card view to match card info
-		var card = DealerPlayer.StackCardSlot.TopCard();
-		card.CardView.SetCard(cardInfo);
-
-		// Show the card to the player
-		card.TargetTransform.position = Camera.main.transform.position - new Vector3(0, 0.07f, -0.04f);
-		card.TargetTransform.rotation = Camera.main.transform.rotation;
-
-		// Wait for user interacton or a given amount of time
-		if (waitForSeconds < -0.001f)
-			while (!Input.GetMouseButtonDown(0))
-				yield return null;
-		else if (waitForSeconds > 0.001f)
-			yield return new WaitForSeconds(waitForSeconds);
-
-		// Move card to hand
-		PlayerHand.AddCard(card);
-		card.TargetTransform.rotation = Quaternion.Euler(90, 0, 0);
+		yield return PlayerSideManager.PickCard(true, true);
 	}
 
 	private static Player CreatePlayer(string name, CardManager cardManager)
