@@ -117,6 +117,7 @@ public class CardDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 			var cardInstance = MatchManager.CurrentMatch.CurrentSide.PutInRow(_cardObject.Card, dropArea.CardType);
 			if (cardInstance != null)
 			{
+				cardInstance.CardObject = _cardObject;
 				dropArea.CardSlot.AddCard(_cardObject);
 				_cardObject.TargetTransform.rotation = Quaternion.Euler(90, 0, 0);
 				return;

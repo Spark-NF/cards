@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UnityEngine;
 
 class UntapStep : Step
 {
@@ -6,8 +7,13 @@ class UntapStep : Step
 	{
 		// Untap all cards
 		foreach (var card in sideManager.MatchSide.Front)
-			if (card.IsTapped)
-				card.Untap();
+		{
+			if (!card.IsTapped)
+				continue;
+
+			card.Untap();
+			card.CardObject.TargetTransform.Rotate(Vector3.forward, 90);
+		}
 
 		yield break;
 	}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 /// <summary>
@@ -9,8 +10,9 @@ public class CardInstance
 	public int Life;
 	public List<CardInstance> Equipments = new List<CardInstance>();
 	public bool IsTapped { get; private set; }
+	[NonSerialized] public CardObject CardObject;
 
-	private MatchSide _side;
+	private readonly MatchSide _side;
 
 	public CardInstance(Card card, MatchSide side)
 	{
