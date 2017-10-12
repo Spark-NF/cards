@@ -4,30 +4,44 @@ using UnityEngine;
 
 public class MatchManager : MonoBehaviour
 {
-	public static Combat CurrentMatch;
+	public static MatchManager CurrentMatch;
 
 	public SideManager PlayerSideManager;
 	public SideManager FoeSideManager;
 	public TurnNotifier Notifier;
 
-	private MatchSide _sidePlayer;
-	private MatchSide _sideFoe;
+	public MatchSide CurrentSide { get { return _sides[_currentSide]; } }
+
+	private int _currentStep;
+	private int _currentSide;
+	private List<Step> _steps;
+	private List<MatchSide> _sides;
 
 	private void Start()
 	{
+		CurrentMatch = this;
+
 		var cardManager = new CardManager();
 		cardManager.LoadFromFile("Cards");
 
 		var player = CreatePlayer("Player", cardManager);
 		var foe = CreatePlayer("Foe", cardManager);
 
-		PlayerSideManager.MatchSide = new MatchSide(player, player.Decks[0], 20);
-		FoeSideManager.MatchSide = new MatchSide(foe, foe.Decks[0], 20);
-		CurrentMatch = new Combat(new []
+		_currentStep = 0;
+		_currentSide = 0;
+		_steps = new List<Step>
 		{
-			PlayerSideManager.MatchSide,
-			FoeSideManager.MatchSide
-		});
+			new UntapStep(),
+			new DrawStep(),
+			new SomeStep(),
+		};
+		_sides = new List<MatchSide>
+		{
+			new MatchSide(player, player.Decks[0], 20),
+			new MatchSide(foe, foe.Decks[0], 20),
+		};
+		PlayerSideManager.MatchSide = _sides[0];
+		FoeSideManager.MatchSide = _sides[1];
 
 		StartCoroutine(StartGame());
 	}
@@ -49,18 +63,31 @@ public class MatchManager : MonoBehaviour
 		yield return playerPickHand;
 
 		// Start first turn
-		yield return NewTurn();
+		StartCoroutine(NewTurn());
 	}
 
 	private IEnumerator NewTurn()
 	{
 		yield return Notifier.Notify("New turn");
 
-		// Pick card
-		yield return PlayerSideManager.PickCard(true, true);
+		StartCoroutine(RunCurrentStep());
+	}
 
-		// Allow to drag hand cards
-		PlayerSideManager.AllowDragDrop();
+	private IEnumerator RunCurrentStep()
+	{
+		yield return _steps[_currentStep].Run(PlayerSideManager);
+
+		_currentStep++;
+
+		if (_currentStep >= _steps.Count)
+		{
+			_currentStep = 0;
+			StartCoroutine(NewTurn());
+		}
+		else
+		{
+			StartCoroutine(RunCurrentStep());
+		}
 	}
 
 	private static Player CreatePlayer(string name, CardManager cardManager)
