@@ -8,9 +8,9 @@ public class CardInstance
 	public Card Card;
 	public int Life;
 	public List<CardInstance> Equipments = new List<CardInstance>();
+	public bool IsTapped { get; private set; }
 
 	private MatchSide _side;
-	private bool _isTapped = false;
 
 	public CardInstance(Card card, MatchSide side)
 	{
@@ -26,7 +26,7 @@ public class CardInstance
 
 	public void Attack(CardInstance other)
 	{
-		if (_isTapped)
+		if (IsTapped)
 			return;
 
 		other.Life -= Card.Strength;
@@ -43,11 +43,11 @@ public class CardInstance
 
 	public void Tap()
 	{
-		_isTapped = true;
+		IsTapped = true;
 	}
 
 	public void Untap()
 	{
-		_isTapped = false;
+		IsTapped = false;
 	}
 }

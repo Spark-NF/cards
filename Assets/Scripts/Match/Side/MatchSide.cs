@@ -28,29 +28,9 @@ public class MatchSide
 		Pick = new Stack<Card>(cards);
 	}
 
-	public void BeginStep(MatchStep step)
+	public void NewTurn()
 	{
-		CurrentEnergy = 0;
-
-		switch (step)
-		{
-			case MatchStep.Untap:
-				_hasPutResource = false;
-				foreach (CardInstance card in Front)
-					card.Untap();
-				break;
-
-			case MatchStep.Draw:
-				PickCard();
-				break;
-
-			// TODO: manage next steps
-		}
-	}
-
-	public void EndStep(MatchStep step)
-	{
-		// No-op
+		_hasPutResource = false;
 	}
 
 	public Card PickCard()

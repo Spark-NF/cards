@@ -70,6 +70,8 @@ public class MatchManager : MonoBehaviour
 	{
 		yield return Notifier.Notify("New turn");
 
+		CurrentSide.NewTurn();
+
 		StartCoroutine(RunCurrentStep());
 	}
 
