@@ -72,6 +72,6 @@ public class SideManager : MonoBehaviour
 
 		// Move card to hand
 		Hand.CardSlot.AddCard(cardObject);
-		cardObject.TargetTransform.rotation = Quaternion.Euler(90, 0, 0);
+		cardObject.TargetTransform.rotation = Quaternion.Euler(show ? 90 : -90, 0, 0);
 	}
 }
