@@ -1,6 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
+/// <summary>
+/// Represents a 3D card object.
+/// </summary>
 public class CardObject : MonoBehaviour
 {
 	public GameObject Canvas;

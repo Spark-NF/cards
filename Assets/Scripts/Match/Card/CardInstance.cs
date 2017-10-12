@@ -1,5 +1,8 @@
 using System.Collections.Generic;
 
+/// <summary>
+/// Model of a card that is currently in game.
+/// </summary>
 public class CardInstance
 {
 	public Card Card;
